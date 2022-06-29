@@ -1,0 +1,796 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="LsZ76y8BPcdYbnMChe8oQrF6EWc9j7g8c3jWI2js"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+    Nộp thành công
+    </div>
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-06-21 13:43:26" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA Chương 8" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lần đầu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="19.866666666667" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Đậu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="6/10" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3173">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3173" aria-expanded="true" aria-controls="collapse-3173">
+    1. A business is transferring a huge, mission-critical database to Amazon Web Services (AWS). A solutions architect has chosen to utilize an Amazon RDS for MySQL Multi-AZ DB instance with storage capacity of 80,000 Provisioned IOPS. The data transfer is being carried out by the solutions architect utilizing AWS Database Migration Service (AWS DMS). The relocation process is taking longer than anticipated, and the corporation want to expedite it. The network staff at the corporation has ruled out bandwidth as a limiting constraint.<br><br>How should the solutions architect proceed to expedite the migration? (Select two.)<br><br>
+    </div>
+    </div>
+    <div id="collapse-3173" class="accordion-collapse collapse show" aria-labelledby="heading-3173" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5442" disabled="">
+    <label class="form-check-labelx" for="answers-5442">
+    Restart the DMS task on a new DMS instance with transfer acceleration enabled.
+    <br>
+    <i>Transfer acceleration không tồn tại ở DMS</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5443" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5443">
+    <b>Disable Multi-AZ on the target DB instance.</b>
+    <br>
+    <i>Việc enable Multi AZ khi đang migration có thể dẫn tới việc tốn thời gian. Có thể tắt tính năng này tạm thời và bật lại sau khi đã migration xong.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5444" disabled="">
+    <label class="form-check-labelx" for="answers-5444">
+    Change the storage type on the target DB instance to Amazon Elastic Block Store (Amazon EBS) General Purpose SSD (gp2).
+    <br>
+    <i>Nếu sử dụng gp2 sẽ không đảm bảo yêu cầu 80000 IOPS</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5445" disabled="">
+    <label class="form-check-labelx" for="answers-5445">
+    Create a new DMS instance that has a larger instance size.
+    <br>
+    <i>Đây không phải là vấn đề về storage trên Database nên không thể sử dụng phương án này</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5446" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5446">
+    <b>Turn off logging on the target DB instance until the initial load is complete.</b>
+    <br>
+    <i>Mặc dù việc lưu log là quan trọng, tuy nhiên trong trường hợp này, có thể tạm thời tắt log đi để giảm tải cho quá trình migration.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3174">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3174" aria-expanded="true" aria-controls="collapse-3174">
+    2. A business is migrating from on-premises Oracle to Amazon Aurora PostgreSQL. Numerous apps write to the same tables in the database. The apps must be transferred sequentially, with a month between migrations. Management has raised worry about the database's heavy read and write activity. Throughout the entire migration process, the data must be maintained in sync across both databases.<br><br>What recommendations should a solutions architect make?
+    </div>
+    </div>
+    <div id="collapse-3174" class="accordion-collapse collapse show" aria-labelledby="heading-3174" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5447" disabled="">
+    <label class="form-check-labelx" for="answers-5447">
+    Use AWS DataSync for the initial migration. Use AWS Database Migration Service (AWS DMS) to create a change data capture (CDC) replication task and a table mapping to select all cables.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5448" disabled="">
+    <label class="form-check-labelx" for="answers-5448">
+    Use AWS DataSync for the initial migration. Use AWS Database Migration Service (AWS DMS) to create a full load plus change data capture (CDC) replication task and a table mapping to select all tables.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5449" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5449">
+    <b>Use the AWS Schema Conversion Tool with AWS DataBase Migration Service (AWS DMS) using a memory optimized replication instance. Create a full load plus change data capture (CDC) replication task and a table mapping to select all tables.</b>
+    <br>
+    <i>Đối với thao tác Migration, chúng ta ưu tiên sử dụng DMS hơn là DataSync. Database heavy read and write sẽ ưu tiên memory optimize hơn là compute optimized </i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5450" disabled="">
+    <label class="form-check-labelx" for="answers-5450">
+    Use the AWS Schema Conversion Tool with AWS Database Migration Service (AWS DMS) using a compute optimized replication instance. Create a full load plus change data capture (CDC) replication task and a table mapping to select the largest tables
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3175">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3175" aria-expanded="true" aria-controls="collapse-3175">
+    3. A business operates a Microsoft.NET application on an on-premises Windows Server. The program makes use of an Oracle Database Standard Edition server to store data. The firm is in the process of migrating to AWS and want to minimize development modifications throughout the process. The Amazon Web Services application environment should be very reliable. <br><br>Which steps should the organization take in combination to achieve these requirements? (Select two.)
+    </div>
+    </div>
+    <div id="collapse-3175" class="accordion-collapse collapse show" aria-labelledby="heading-3175" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5451" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5451">
+    Refactor the application as serverless with AWS Lambda functions running .NET Core.
+    <br>
+    <i>Yêu cầu của câu hỏi là minimize development midification, có nghĩa là giảm thiểu việc thay đổi code tới mức tối thiểu. Đối với việc refactor hệ thống lại theo hướng serverless sẽ yêu cầu chỉnh sửa lại code rất nhiều</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5452" disabled="">
+    <label class="form-check-labelx" for="answers-5452">
+    <b>Rehost the application in AWS Elastic Beanstalk with the .NET platform in a Multi-AZ deployment.</b>
+    <br>
+    <i>Beanstalk có thể hoạt động với .NET Platform mà không cần phải thay đổi cấu trúc Code</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5453" disabled="">
+    <label class="form-check-labelx" for="answers-5453">
+    Replatform the application to run on Amazon EC2 with the Amazon Linux Amazon Machine Image (AMI).
+    <br>
+    <i>Replatform sang Linux sẽ yêu cầu hệ thống phải thay đổi code, do hiện tại đang sử dụng Microsoft.NET</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5454" disabled="">
+    <label class="form-check-labelx" for="answers-5454">
+    Use AWS Database Migration Service (AWS DMS) to migrate from the Oracle database to Amazon DynamoDB in a Multi-AZ deployment.
+    <br>
+    <i>Oracle Database là 1 loại SQL Database, không nên migration sang DynamoDB, nếu không sẽ cần phải update lại Code tương đối nhiều</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5455" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5455">
+    <b>Use AWS Database Migration Service (AWS DMS) to migrate from the Oracle database to Oracle on Amazon RDS in a Multi-AZ deployment.</b>
+    <br>
+    <i>Oracle Database và RDS nhìn chung khá tương đồng nhau, có thể hoạt động mà không cần thay đổi Code quá nhiều.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3176">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3176" aria-expanded="true" aria-controls="collapse-3176">
+    4. A business intends to migrate many gigabytes of data to AWS. Offline data is obtained from ships. Before transmitting the data, the organization want to do complicated transformations.<br><br>Which Amazon Web Services (AWS) service should a solutions architect suggest for this migration?
+    </div>
+    </div>
+    <div id="collapse-3176" class="accordion-collapse collapse show" aria-labelledby="heading-3176" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5456" disabled="">
+    <label class="form-check-labelx" for="answers-5456">
+    AWS Snowball
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5457" disabled="">
+    <label class="form-check-labelx" for="answers-5457">
+    AWS Snowmobile
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5458" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5458">
+    AWS Snowball Edge Storage Optimize
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5459" disabled="">
+    <label class="form-check-labelx" for="answers-5459">
+    <b>AWS Snowball Edge Compute Optimize</b>
+    <br>
+    <i>Trước khi di chuyển dữ liệu cần tính toán nhiều, do đó lựa chọn Snowball Edge Compute Optimize sẽ phù hợp hơn trong trường hợp này</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3177">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3177" aria-expanded="true" aria-controls="collapse-3177">
+    5. A business wishes to manage a fleet of Amazon EC2 instances using AWS Systems Manager. No EC2 instances are permitted to have internet access, per the company's security needs. A solutions architect is responsible for designing network connection between EC2 instances and Systems Manager while adhering to this security requirement.<br><br>Which solution will satisfy these criteria?
+    </div>
+    </div>
+    <div id="collapse-3177" class="accordion-collapse collapse show" aria-labelledby="heading-3177" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5460" disabled="">
+    <label class="form-check-labelx" for="answers-5460">
+    Deploy the EC2 instances into a private subnet with no route to the internet.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5461" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5461">
+    <b>Configure an interface VPC endpoint for Systems Manager. Update routes to use the endpoint.</b>
+    <br>
+    <i>Có thể sử dụng VPC Endpoint dành riêng cho SSM connect ra bên ngoài. Từ đó, đảm bảo yêu cầu của công ty là không có EC2 instance nào được kết nối ra ngoài internet, nhưng SSM vẫn có thể thực hiện được chức năng</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5462" disabled="">
+    <label class="form-check-labelx" for="answers-5462">
+    Deploy a NAT gateway into a public subnet. Configure private subnets with a default route to the NAT gateway.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5463" disabled="">
+    <label class="form-check-labelx" for="answers-5463">
+    Deploy an internet gateway. Configure a network ACL to deny traffic to all destinations except Systems Manager.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3178">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3178" aria-expanded="true" aria-controls="collapse-3178">
+    6. Within 30 days, a corporation must move 20 TB of data from a data center to the AWS Cloud. The network capacity of the organization is restricted to 15 Mbps and cannot exceed 70% use.<br><br>What actions should a solutions architect take to ensure that these criteria are met?
+    </div>
+    </div>
+    <div id="collapse-3178" class="accordion-collapse collapse show" aria-labelledby="heading-3178" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5464" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5464">
+    <b>Use AWS Snowball.</b>
+    <br>
+    <i>Với tốc độ 15Mbps, không thể nào đưa 20TB lên Cloud bằng kết nối network thông thường được. Chỉ có thể sử dụng Snowball</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5465" disabled="">
+    <label class="form-check-labelx" for="answers-5465">
+    Use AWS DataSync.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5466" disabled="">
+    <label class="form-check-labelx" for="answers-5466">
+    Use a secure VPN connection.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5467" disabled="">
+    <label class="form-check-labelx" for="answers-5467">
+    Use Amazon S3 Transfer Acceleration.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3179">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3179" aria-expanded="true" aria-controls="collapse-3179">
+    7. A business is in the process of migrating its on-premises application to AWS. Program servers and a Microsoft SQL Server database comprise the application. The database cannot be transferred to another engine due to the application's NET code using SQL Server functionality. The company's goal is to maximize availability while decreasing operational and administration costs.<br><br>What actions should a solutions architect take to achieve this?
+    </div>
+    </div>
+    <div id="collapse-3179" class="accordion-collapse collapse show" aria-labelledby="heading-3179" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5468" disabled="">
+    <label class="form-check-labelx" for="answers-5468">
+    Install SQL Server on Amazon EC2 in a Multi-AZ deployment.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5469" disabled="">
+    <label class="form-check-labelx" for="answers-5469">
+    <b>Migrate the data to Amazon RDS for SQL Server in a Multi-AZ deployment.</b>
+    <br>
+    <i>Sử dụng RDS cho SQL Server là hợp lý nhất trong trường hợp này</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5470" disabled="">
+    <label class="form-check-labelx" for="answers-5470">
+    Deploy the database on Amazon RDS for SQL Server with Multi-AZ Replicas.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5471" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5471">
+    Migrate the data to Amazon RDS for SQL Server in a cross-Region Multi-AZ deployment.
+    <br>
+    <i>RDS không hỗ trợ tính năng này do đó không phải là đáp án đúng</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3180">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3180" aria-expanded="true" aria-controls="collapse-3180">
+    8. A business wishes to migrate live datasets online from an on-premises NFS server to an Amazon S3 bucket called DOC-EXAMPLE-BUCKET. Verification of data integrity is essential both during and after the transmission. Additionally, the data must be encrypted.<br>A solutions architect is migrating the data using an AWS solution.<br><br>Which solution satisfies these criteria?
+    </div>
+    </div>
+    <div id="collapse-3180" class="accordion-collapse collapse show" aria-labelledby="heading-3180" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5472" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5472">
+    AWS Storage Gateway file gateway
+    <br>
+    <i>Phương án này có thể thực hiện được, tuy nhiên để đảm bảo data integrity</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5473" disabled="">
+    <label class="form-check-labelx" for="answers-5473">
+    S3 Transfer Acceleration
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5474" disabled="">
+    <label class="form-check-labelx" for="answers-5474">
+    <b>AWS DataSync</b>
+    <br>
+    <i>Để migrate Live datasets online, thì DataSync là cần thiết trong trường hợp này.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5475" disabled="">
+    <label class="form-check-labelx" for="answers-5475">
+    AWS Snowball Edge Storage Optimized
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3181">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3181" aria-expanded="true" aria-controls="collapse-3181">
+    9. A business is in the process of transferring its apps to AWS. At the moment, on-premises apps create hundreds of terabytes of data, which is kept on a shared file system. The organization is using a cloud-based analytics solution to derive insights from this data on an hourly basis.<br>The business requires a solution to manage continuous data transfer between its on-premises shared file system and Amazon S3. Additionally, the solution must be capable of coping with brief gaps in internet access.<br><br>Which data transmission options should the business utilize to achieve these requirements?
+    </div>
+    </div>
+    <div id="collapse-3181" class="accordion-collapse collapse show" aria-labelledby="heading-3181" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5476" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5476">
+    <b>AWS DataSync</b>
+    <br>
+    <i>Đây là đáp án hợp lý cho trường hợp này: On going data transfer từ on premise tới S3</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5477" disabled="">
+    <label class="form-check-labelx" for="answers-5477">
+    AWS Migration Hub
+    <br>
+    <i>Đây là dịch vụ dùng để track các task migration</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5478" disabled="">
+    <label class="form-check-labelx" for="answers-5478">
+    AWS Snowball Edge Storage Optimized
+    <br>
+    <i>Không phù hợp cho continuous data transfer</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5479" disabled="">
+    <label class="form-check-labelx" for="answers-5479">
+    AWS Transfer for SFTP
+    <br>
+    <i>Dữ liệu ở đây không nhắc tới việc sử dụng SFTP, do đó không phù hợp cho câu hỏi này</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3182">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3182" aria-expanded="true" aria-controls="collapse-3182">
+    10. A solutions architect is entrusted with the responsibility of moving 750 TB of data from an on-premises network-attached file system to an Amazon S3 Glacier at a branch office.<br>The migration must not exceed the 1 Mbps internet connection on-premises.<br><br>Which solution will satisfy these criteria?
+    </div>
+    </div>
+    <div id="collapse-3182" class="accordion-collapse collapse show" aria-labelledby="heading-3182" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5480" disabled="">
+    <label class="form-check-labelx" for="answers-5480">
+    Create an AWS site-to-site VPN tunnel to an Amazon S3 bucket and transfer the files directly. Transfer the files directly by using the AWS CLI.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5481" disabled="">
+    <label class="form-check-labelx" for="answers-5481">
+    Order 10 AWS Snowball Edge Storage Optimized devices, and select an S3 Glacier vault as the destination.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5482" disabled="">
+    <label class="form-check-labelx" for="answers-5482">
+    Mount the network-attached file system to an S3 bucket, and copy the files directly. Create a lifecycle policy to transition the S3 objects to Amazon S3 Glacier.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5483" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5483">
+    <b>Order 10 AWS Snowball Edge Storage Optimized devices, and select an Amazon S3 bucket as the destination. Create a lifecycle policy to transition the S3 objects to Amazon S3 Glacier.</b>
+    <br>
+    <i>Ở đây do internet connection quá chậm, nên không thể sử dụng network thông thường. Chúng ta còn 2 đáp án sử dụng Snowball. Do Snowball không thể up trực tiếp lên S3 Glacier, do vậy, chúng ta cần phải up lên S3 trước và tạo lifecycle policy chuyển sang S3 Glacier.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022undefined\u0022:{\u0022correct\u0022:1,\u0022incorrect\u0022:0,\u0022category_id\u0022:null}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>

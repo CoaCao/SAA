@@ -1,0 +1,3854 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="ymOj3MIJ5GQER5TD9hMBoMBo3PV9dvgEdtstOrjd"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+    Nộp thành công
+    </div>
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-06-12 14:38:02" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA 6" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lần đầu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="18.583333333333" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Trượt" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="3/9" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-692">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-692" aria-expanded="true" aria-controls="collapse-692">
+    1. An organization is planning their disaster recovery solution. They plan to run a scaled down version of a fully functional environment. In a DR situation the recovery time must be minimized.<br>Which DR strategy should a Solutions Architect recommend?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-692" class="accordion-collapse collapse show" aria-labelledby="heading-692" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2837" disabled="">
+    <label class="form-check-labelx" for="answers-2837">
+    Multi-site
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2838" disabled="">
+    <label class="form-check-labelx" for="answers-2838">
+    <b>Warm standby</b>
+    <br>
+    <i>Warm standby được sử dụng để mô tả kịch bản phục hổi sau thảm họa (Disaster Recovery) trong đó phiên bản thu nhỏ (scaled-down version) của môi trường đầy đủ trước năng luôn chạy trên đám mây.<br>References:<br>https://aws.amazon.com/blogs/publicsector/rapidly-recover-mission-critical-systems-in-a-disaster//<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2839" disabled="">
+    <label class="form-check-labelx" for="answers-2839">
+    Pilot light
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2840" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2840">
+    Backup and restore
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-693">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-693" aria-expanded="true" aria-controls="collapse-693">
+    2. A Solutions Architect created a new IAM user account for a temporary employee who recently joined the company. The user does not have permissions to perform any actions, which statement is true about newly created users in IAM?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-693" class="accordion-collapse collapse show" aria-labelledby="heading-693" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2841" disabled="">
+    <label class="form-check-labelx" for="answers-2841">
+    They are created with user privileges
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2842" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2842">
+    <b>They are created with no permissions</b>
+    <br>
+    <i>Mọi IAM user khi được tạo đều không có quyền (no permissions). Theo mặc định, users không thể làm gì, thậm chí không thể xem được access key của chính họ.<br>Để cấp cho người dùng quyền thực hiện điều gì đó, bạn có thể thêm quyền cho người dùng. Hoặc bạn có thể thêm user vào một group có quyền dự định.<br>References:<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2843" disabled="">
+    <label class="form-check-labelx" for="answers-2843">
+    They are created with limited permissions
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2844" disabled="">
+    <label class="form-check-labelx" for="answers-2844">
+    They are created with full permissions
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-694">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-694" aria-expanded="true" aria-controls="collapse-694">
+    3. A solutions Architect is designing a new workload where an AWS Lambda function will access an Amazon DynamoDB table.<br>What is the MOST secure means of granting the Lambda function access to the DynamoDB table?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-694" class="accordion-collapse collapse show" aria-labelledby="heading-694" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2845" disabled="">
+    <label class="form-check-labelx" for="answers-2845">
+    Create a DynamoDB username and password and give them to the Developer to use in the Lambda function
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2846" disabled="">
+    <label class="form-check-labelx" for="answers-2846">
+    Create an identity and access management (IAM) role allowing access from AWS Lambda and assign the role to the DynamoDB table
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2847" disabled="">
+    <label class="form-check-labelx" for="answers-2847">
+    Create an identity and access management (IAM) user and create access and secret keys for the user. Give the user the necessary permissions to access the DynamoDB table. Have the Developer use these keys to access the resources
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2848" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2848">
+    <b>Create an identity and access management (IAM) role with the necessary permissions to access the DynamoDB table, and assign the role to the Lambda function</b>
+    <br>
+    <i>Giải pháp an toàn(secure) nhất là sử dụng IAM role. Chúng ta sẽ không cần nhúng bất kỳ thông tin đăng nhập nào vào mã và có thể kiểm soát chặt chẽ các dịnh vụ mà Lambda function có thể truy cập. Vì vậy chúng ta cần trao quyền cho Lambda function có thể tru cập DynamoDB table.<br><br>References:<br>https://aws.amazon.com/blogs/security/how-to-create-an-aws-iam-policy-to-grant-aws-lambda-access-to-an-amazon-dynamodb-table/<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-695">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-695" aria-expanded="true" aria-controls="collapse-695">
+    4. A Solutions Architect is developing an encryption solution. The solution requires that data keys are encrypted using envelope protection before they are written to disk.<br>Which solution option can assist with this requirement?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-695" class="accordion-collapse collapse show" aria-labelledby="heading-695" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2849" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2849">
+    API Gateway with STS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2850" disabled="">
+    <label class="form-check-labelx" for="answers-2850">
+    IAM Access Key
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2851" disabled="">
+    <label class="form-check-labelx" for="answers-2851">
+    AWS Certificate Manager
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2852" disabled="">
+    <label class="form-check-labelx" for="answers-2852">
+    <b>AWS KMS API</b>
+    <br>
+    <i><br>Khi chúng ta mã hóa dữ liệu của mình, dữ liệu của chúng ta sẽ được bảo vệ, nhưng chúng ta phải bảo vệ khóa mã hóa của mình (encryption key).<br>Chúng ta lại có một chiến lược để mã hóa khóa mã hóa của mình :D <br>Envelop encryption là cách mã hóa dữ liệu plain text với một data key và sau đó mã hóa data key dưới một khóa khác.<br>AWS KMS API là đáp án đúng<br>API Gateway with STS: AWS Security Token Service là một dịch vụ web cho phép chúng ta yêu cầu thông tin xác thực quyền tạm thời, có giới hạn cho IAM users hoặc user mà chúng ta xác thực (federated users)<br>AWS Certificate Manager: là dịch vụ cho phép dễ dàng cung cấp, quản lý và triển khai các chứng chỉ bảo mật (vd: SSL/TLS)<br>References:<br>https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-696">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-696" aria-expanded="true" aria-controls="collapse-696">
+    5. An operations team would like to be notified if an RDS database exceeds certain metric thresholds. How can a Solutions Architect automate this process for the operations team?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Database</span>
+    </div>
+    </div>
+    <div id="collapse-696" class="accordion-collapse collapse show" aria-labelledby="heading-696" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2853" disabled="">
+    <label class="form-check-labelx" for="answers-2853">
+    Setup an RDS alarm and associate an SNS topic with it that sends an email
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2854" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2854">
+    <b>Create a CloudWatch alarm and associate an SNS topic with it that sends an email notification</b>
+    <br>
+    <i><br>Chúng ta có thể tạo một CloudWatch Alarm để theo dõi một chỉ số (metrics) CloudWatch hoặc kết quả của một biểu thức toán học dựa trên CloudWatch metrics.<br>Alarm thực hiện một hoặc nhiều hành động dựa trên giá trị của metrics hoặc biểu thức niên quan đến ngưỡng trong một số khoảng thời gian.<br>Những hành động Alarm thực hiện có thể từ EC2, EC2 Auto Scaling, hoặc thông báo được gửi đến SNS Topic. SNS có thể được cấu hình đề gửi email thông báo.<br><br>References:<br>https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2855" disabled="">
+    <label class="form-check-labelx" for="answers-2855">
+    Create a CloudTrail alarm and configure a notification event to send an SMS
+    <br>
+     <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2856" disabled="">
+    <label class="form-check-labelx" for="answers-2856">
+    Create a CloudWatch alarm and associate an SQS with it that delivers a message to SES
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-697">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-697" aria-expanded="true" aria-controls="collapse-697">
+    6. An application stack is being created which needs a message bus to decouple the application components from each other. The application will generate up to 300 messages per second without using batching. A Solutions Architect needs to ensure that a message is delivered only once and duplicates are not introduced into the queue. It is not necessary to maintain the order of the messages.<br>Which SQS queue type should be used?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-697" class="accordion-collapse collapse show" aria-labelledby="heading-697" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2857" disabled="">
+    <label class="form-check-labelx" for="answers-2857">
+    Auto Scaling queues
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2858" disabled="">
+    <label class="form-check-labelx" for="answers-2858">
+    <b>FIFO queues</b>
+    <br>
+    <i><br>Trong câu hỏi có đề cập đến không cần thiết phải duy trì thứ tự của thông báo có thể làm chúng ta nhầm lẫn là có thể sử dụng Standar queue, nhưng Standar queue lại không đảm bảo được vấn đề các message không được duplicate<br>Quan trọng trong câu hỏi này là các messages không được trùng lặp. Vì vậy chúng ta phải sử dụng FIFO queue <br>FIFO queue : là hàng đợi bảo toàn chính xác thứ tự các thông điệp gửi và nhận, mỗi tin nhắn được gửi một lần và vẫn có sẵn cho đến khi xử lí chúng và xóa nó.<br>References:<br>https://aws.amazon.com/sqs/features/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2859" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2859">
+    Standard queues
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2860" disabled="">
+    <label class="form-check-labelx" for="answers-2860">
+    Long polling queues
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-698">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-698" aria-expanded="true" aria-controls="collapse-698">
+    7. A Solutions Architect is creating a multi-tier application that includes loosely-coupled, distributed application components and needs to determine a method of sending notifications instantaneously. Using Amazon SNS which transport protocols are supported? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-698" class="accordion-collapse collapse show" aria-labelledby="heading-698" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2861" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2861">
+    Lambda
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2862" disabled="">
+    <label class="form-check-labelx" for="answers-2862">
+    <b>Email-JSON</b>
+    <br>
+    <i>Các giao thức truyền tải được AWS SNS hỗ trợ là : <br>- HTTP/HTTPS<br>- Email/Email-JSON<br>- SQS<br>- SMS<br><br>References:<br>https://aws.amazon.com/sns/faqs//<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2863" disabled="">
+    <label class="form-check-labelx" for="answers-2863">
+    FTP
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2864" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2864">
+    <b>HTTPS</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2865" disabled="">
+    <label class="form-check-labelx" for="answers-2865">
+    SWF
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-699">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-699" aria-expanded="true" aria-controls="collapse-699">
+    8. An application is generating a large amount of clickstream events data that is being stored on S3. The business needs to understand customer behaviour and want to run complex analytics queries against the data.<br>Which AWS service can be used for this requirement?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-699" class="accordion-collapse collapse show" aria-labelledby="heading-699" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2866" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2866">
+    Amazon Kinesis Firehose
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2867" disabled="">
+    <label class="form-check-labelx" for="answers-2867">
+    Amazon RDS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2868" disabled="">
+    <label class="form-check-labelx" for="answers-2868">
+    <b>Amazon RedShift</b>
+    <br>
+    <i>AWS Redshift là một kho dữ liệu, được quản lý, nhanh, giúp phân tích tất cả các dữ liệu một cách đơn giản, và tiết kiệm chi phí bằng cách sử dụng standar SQL và các công cụ Business Intelligence (BI) hiện có<br>Redshift được sử dụng để chạy các truy vấn phức tạp đối với petabytes dữ liệu có cấu trúc, sử dụng tối ưu hóa truy vấn phức tạp, lưu trữ dạng cột trên các đĩa cục bộ hiệu suất cao và thực thi các truy vấn song song hàng loạt.<br>Với Redshift, có thể tải dữ liệu từ S3 và thực hiện các truy vấn phân tích, Redshift Spectrum có thể phân tích dữ liệu trực tiếp trong S3<br><br>References:<br>https://aws.amazon.com/redshift/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2869" disabled="">
+    <label class="form-check-labelx" for="answers-2869">
+    Amazon Neptune
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-700">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-700" aria-expanded="true" aria-controls="collapse-700">
+    9. An Amazon DynamoDB table has a variable load, ranging from sustained heavy usage some days, to only having small spikes on others. The load is 80% read and 20% write. The provisioned throughput capacity has been configured to account for the heavy load to ensure throttling does not occur.<br>What would be the most efficient solution to optimize cost?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Cost Optimize</span>
+    </div>
+    </div>
+    <div id="collapse-700" class="accordion-collapse collapse show" aria-labelledby="heading-700" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2870" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-2870">
+    Use DynamoDB DAX to increase the performance of the database
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2871" disabled="">
+    <label class="form-check-labelx" for="answers-2871">
+    Create a CloudWatch alarm that triggers an AWS Lambda function that adjusts the provisioned throughput
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2872" disabled="">
+    <label class="form-check-labelx" for="answers-2872">
+    Create a CloudWatch alarm that notifies you of increased/decreased load, and manually adjust the provisioned throughput
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2873" disabled="">
+    <label class="form-check-labelx" for="answers-2873">
+    <b>Create a DynamoDB Auto Scaling scaling policy</b>
+    <br>
+    <i>Create a DynamoDB Auto Scaling scaling policy: là đáp án chính xác<br>DynamoDb Auto scaling sử dụng dịch vụ AWS Application Auto Scaling để điều chỉnh tự động thông lượng được cung cấp, đáp ứng với traffic thực tế.<br>Đây là phương pháp hiểu quả và tiết kiệm chi phí nhất để tối ưu hóa chi phí.<br><br>References:<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-701">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-701" aria-expanded="true" aria-controls="collapse-701">
+    10. A company runs an application on premises that stores a large quantity of semi-structured data using key-value pairs. The application code will be migrated to AWS Lambda and a highly scalable solution is required for storing the data.<br>Which datastore will be the best fit for these requirements?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Serverless</span>
+    </div>
+    </div>
+    <div id="collapse-701" class="accordion-collapse collapse show" aria-labelledby="heading-701" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2874" disabled="">
+    <label class="form-check-labelx" for="answers-2874">
+    <b>Amazon DynamoDB</b>
+    <br>
+    <i>Amazon DynamoDB: là đáp án chính xác<br>DynamoDB là noSQl database, lưu trữ dữ liệu bằng cách sử dụng các cặp key-value . Nó lý tưởng để lưu trữ một lượng lớn dữ liệu bán cấu trúc (semi-structured data) .<br>References:<br>https://aws.amazon.com/dynamodb/features/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2875" disabled="">
+    <label class="form-check-labelx" for="answers-2875">
+    Amazon EFS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2876" disabled="">
+    <label class="form-check-labelx" for="answers-2876">
+    Amazon RDS MySQL
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2877" disabled="">
+    <label class="form-check-labelx" for="answers-2877">
+    Amazon EBS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-702">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-702" aria-expanded="true" aria-controls="collapse-702">
+    11. A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.<br>Which AWS services would allow the company to query the data in place? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-702" class="accordion-collapse collapse show" aria-labelledby="heading-702" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2878" disabled="">
+    <label class="form-check-labelx" for="answers-2878">
+    <b>Amazon S3 Select</b>
+    <br>
+    <i>S3 Select được thiết kế để giúp phân tích và xử lý dữ liệu trong một đối tượng trong nhóm S3, nhanh hơn và rẻ hơn. Nó hoạt động bằng cách cung cấp khả năng truy xuất một tập hợp con dữ liệu từ một đối tượng trong AWS S3 bằng cách sử dụng các biểu thức SQL đơn giản.<br><br>References:<br>https://aws.amazon.com/blogs/aws/s3-glacier-select/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2879" disabled="">
+    <label class="form-check-labelx" for="answers-2879">
+    Amazon Elasticsearch
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2880" disabled="">
+    <label class="form-check-labelx" for="answers-2880">
+    Amazon SWF
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2881" disabled="">
+    <label class="form-check-labelx" for="answers-2881">
+    Amazon Kinesis Data Streams
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2882" disabled="">
+    <label class="form-check-labelx" for="answers-2882">
+    <b>Amazon RedShift Spectrum</b>
+    <br>
+    <i>Redshift Spectrum cho phép bạn chạy trực tiếp các truy vấn SQL đối với các dữ liệu phi cấu trúc trong S3 mà không cần loading và chuyển đổi. <br><br>References:<br><br>https://aws.amazon.com/about-aws/whats-new/2017/11/amazon-redshift-spectrum-is-now-available-in-four-additional-aws-regions-and-enhances-query-performance-in-all-available-aws-regions/</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-703">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-703" aria-expanded="true" aria-controls="collapse-703">
+    12. The database layer of an on-premises web application is being migrated to AWS. The database currently uses an in-memory cache. A Solutions Architect must deliver a solution that supports high availability and replication for the caching layer.<br>Which service should the Solutions Architect recommend?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Migration</span>
+    </div>
+    </div>
+    <div id="collapse-703" class="accordion-collapse collapse show" aria-labelledby="heading-703" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2883" disabled="">
+    <label class="form-check-labelx" for="answers-2883">
+    Amazon ElastiCache Memcached
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2884" disabled="">
+    <label class="form-check-labelx" for="answers-2884">
+    Amazon RDS Multi-AZ
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2885" disabled="">
+    <label class="form-check-labelx" for="answers-2885">
+    Amazon DynamoDB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2886" disabled="">
+    <label class="form-check-labelx" for="answers-2886">
+    <b>Amazon ElastiCache Redis</b>
+    
+    <br>
+    <i>ElasticCache Redis là bộ nhớ đệm cơ sở dữ liệu (in-memory database) hỗ trợ tính khả dụng cao (high availabilaty) thông qua các bản sao (replicas) và multi AZ.<br><br>References:<br>https://aws.amazon.com/elasticache/redis-vs-memcached/<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-704">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-704" aria-expanded="true" aria-controls="collapse-704">
+    13. A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-704" class="accordion-collapse collapse show" aria-labelledby="heading-704" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2887" disabled="">
+    <label class="form-check-labelx" for="answers-2887">
+    Implement Amazon CloudFront and cache the content at Edge Locations
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2888" disabled="">
+    <label class="form-check-labelx" for="answers-2888">
+    Implement an Instance store volume on the media catalog server
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2889" disabled="">
+    <label class="form-check-labelx" for="answers-2889">
+    <b>Update the application code to use an Amazon ElastiCache for Redis cluster
+    </b>
+    <br>
+    <i>ElastiCache for Redis là in-memory, được quản lý hoàn toàn, cung cấp hiệu suất độ trễ dưới mili giây với thông lượng cao. ElastiCache cho Redis bổ sung cho S3 theo những cách sau:<br>- Redis lưu trữ dữ liệu trong bộ nhớ, vì vậy nó cung cấp độ trễ dưới mili giây và hỗ trợ các yêu cầu cực kỳ cao mỗi giây.<br>- Nó hỗ trợ các hoạt động dựa trên khóa / giá trị ánh xạ tốt các hoạt động của S3 (ví dụ: GET / SET =&gt; GET / PUT), giúp bạn dễ dàng viết mã cho cả S3 và ElastiCache.<br>- Nó có thể được thực hiện như một bộ đệm phía ứng dụng. Điều này cho phép bạn sử dụng S3 làm kho lưu trữ lâu dài của mình và được hưởng lợi từ độ bền, tính khả dụng và chi phí thấp. Các ứng dụng của bạn quyết định những đối tượng nào sẽ lưu vào bộ nhớ cache, khi nào lưu chúng vào bộ nhớ cache và cách lưu chúng vào bộ nhớ cache.<br>Trong ví dụ này, catalog media đang kéo các bản cập nhật từ S3 nên hiệu suất giữa các thành phần này là điều cần được cải thiện. Do đó, sử dụng ElastiCache để lưu nội dung vào bộ nhớ cache sẽ làm tăng hiệu suất một cách đáng kể.<br><br>References:<br>https://aws.amazon.com/blogs/storage/turbocharge-amazon-s3-with-amazon-elasticache-for-redis/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2890" disabled="">
+    <label class="form-check-labelx" for="answers-2890">
+    Update the application code to use an Amazon DynamoDB Accelerator cluster
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-705">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-705" aria-expanded="true" aria-controls="collapse-705">
+    14. A large multi-national client has requested a design for a multi-region database. The master database will be in the EU (Frankfurt) region and databases will be located in 4 other regions to service local read traffic. The database should be a managed service including the replication.<br>The solution should be cost-effective and secure. Which AWS service can deliver these requirements?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Cost Optimize</span>
+    </div>
+    </div>
+    <div id="collapse-705" class="accordion-collapse collapse show" aria-labelledby="heading-705" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2891" disabled="">
+    <label class="form-check-labelx" for="answers-2891">
+    <b>RDS with cross-region Read Replicas </b>
+    <br>
+    <i>Amazon RDS Read replicas được sử dụng để đọc dữ liệu nặng và replication là không đồng bộ. Read replicas được sử dụng để chia sẻ và giảm tải khối lượng công việc. Read replicas có thể ở một khu vực khác. Giải pháp này sẽ mang lại hiệu suất tốt hơn cho người dùng ở các khu vực AWS khác đối với các truy vấn cơ sở dữ liệu và là một dịch vụ được quản lý.<br>References:<br>https://aws.amazon.com/blogs/aws/cross-region-read-replicas-for-amazon-rds-for-mysql/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2892" disabled="">
+    <label class="form-check-labelx" for="answers-2892">
+    ElastiCache with Redis and clustering mode enabled
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2893" disabled="">
+    <label class="form-check-labelx" for="answers-2893">
+    RDS with Multi-AZ
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2894" disabled="">
+    <label class="form-check-labelx" for="answers-2894">
+    EC2 instances with EBS replication
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-706">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-706" aria-expanded="true" aria-controls="collapse-706">
+    15. Some data has become corrupted in an Amazon RDS database. A Solutions Architect plans to use point-in-time restore to recover the data to the last known good configuration. Which of the following statements is correct about restoring an RDS database to a specific point-in-time? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-706" class="accordion-collapse collapse show" aria-labelledby="heading-706" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2895" disabled="">
+    <label class="form-check-labelx" for="answers-2895">
+    <b>You can restore up to the last 5 minutes</b>
+    <br>
+    <i>Bạn có thểrestore một DB ở một thời điểm cụ thể, tạo một DB mới. Khi bạn restore một DB tại một thời điểm, DB security group mặc định sẽ được áp dụng cho phiên bản DB mới. Nếu bạn cần DB security group tùy chỉnh được áp dụng cho phiên bản DB của mình, bạn phải áp dụng chúng một cách rõ ràng bằng cách sử dụng AWS Management Console, lệnh AWS CLI mod-db-instance hoặc Amazon RDS API ModifyDBInstance operation sau khi phiên bản DB khả dụng (available).<br>Các DB được restore sẽ luôn là một phiên bản RDS mới với DNS endpoint mới và bạn có thể restore trong tối đa 5 phút qua.<br>References:<br>https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2896" disabled="">
+    <label class="form-check-labelx" for="answers-2896">
+    You can restore up to the last 1 minute
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2897" disabled="">
+    <label class="form-check-labelx" for="answers-2897">
+    <b>The default DB security group is applied to the new DB instance</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2898" disabled="">
+    <label class="form-check-labelx" for="answers-2898">
+    Custom DB security groups are applied to the new DB instance
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-707">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-707" aria-expanded="true" aria-controls="collapse-707">
+    16. An application that is being installed on an Amazon EC2 instance requires a persistent block storage volume. The data must be encrypted at rest and regular volume-level backups must be automated.<br>Which solution options should be used?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-707" class="accordion-collapse collapse show" aria-labelledby="heading-707" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2899" disabled="">
+    <label class="form-check-labelx" for="answers-2899">
+    Use an encrypted Amazon EC2 instance store and copy the data to another EC2 instance using a cron job and a batch script
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2900" disabled="">
+    <label class="form-check-labelx" for="answers-2900">
+    Use an encrypted Amazon EFS filesystem and use an Amazon CloudWatch Events rule to start a backup copy of data using AWS Lambda
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2901" disabled="">
+    <label class="form-check-labelx" for="answers-2901">
+    Use server-side encryption on an Amazon S3 bucket and use Cross-Region-Replication to backup on a schedule
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2902" disabled="">
+    <label class="form-check-labelx" for="answers-2902">
+    <b>Use an encrypted Amazon EBS volume and use Data Lifecycle Manager to automate snapshots</b>
+    <br>
+    <i>Để lưu trữ khối, Kiến trúc sư giải pháp nên sử dụng Amazon EBS hoặc cửa hàng phiên bản EC2. Tuy nhiên, kho lưu trữ cá thể không liên tục nên phải sử dụng EBS. Với EBS, bạn có thể mã hóa khối lượng của mình và tự động hóa các bản sao lưu ở mức khối lượng bằng cách sử dụng ảnh chụp nhanh do Trình quản lý vòng đời dữ liệu chạy.<br>References:<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-708">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-708" aria-expanded="true" aria-controls="collapse-708">
+    17. An Amazon VPC contains a mixture of Amazon EC2 instances in production and non-production environments. A Solutions Architect needs to devise a way to segregate access permissions to different sets of users for instances in different environments.<br>How can this be achieved? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-708" class="accordion-collapse collapse show" aria-labelledby="heading-708" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2903" disabled="">
+    <label class="form-check-labelx" for="answers-2903">
+    Create an IAM policy with a conditional statement that matches the environment variables
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2904" disabled="">
+    <label class="form-check-labelx" for="answers-2904">
+    <b>Create an IAM policy that grants access to any instances with the specific tag</b>
+    <br>
+    <i>Chúng ta có thể sử dụng điều kiện trong IAM policies theo một tag cụ thể. IAM kiểm tra tag được đính kèm với principal thực thiện yêu cầu có khớp với tên và giá trị được chỉ định hay không.<br><br>References:<br>https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2905" disabled="">
+    <label class="form-check-labelx" for="answers-2905">
+    Attach an Identity Provider (IdP) and delegate access to the instances to the relevant groups
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2906" disabled="">
+    <label class="form-check-labelx" for="answers-2906">
+    <b>Add a specific tag to the instances you want to grant the users or groups access to</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2907" disabled="">
+    <label class="form-check-labelx" for="answers-2907">
+    Add an environment variable to the instances using user data
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-709">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-709" aria-expanded="true" aria-controls="collapse-709">
+    18. A Solutions Architect just completed the implementation of a 2-tier web application for a client. The application uses Amazon EC2 instances, Amazon ELB and Auto Scaling across two subnets. After deployment the Solutions Architect noticed that only one subnet has EC2 instances running in it. What might be the cause of this situation?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-709" class="accordion-collapse collapse show" aria-labelledby="heading-709" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2908" disabled="">
+    <label class="form-check-labelx" for="answers-2908">
+    The AMI is missing from the ASG’s launch configuration
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2909" disabled="">
+    <label class="form-check-labelx" for="answers-2909">
+    <b>The Auto Scaling Group has not been configured with multiple subnets</b>
+    <br>
+    <i>Chúng ta có thể chỉ định nhiều subnet để Auto Scaling sẽ khởi chạy một instance mới. Auto Scaling sẽ tự động phân phối các phiên bản EC2 trên các AZ. Nếu chỉ có 1 subnet có các instances chạy trong đó, điều đầu tiên chúng ta cần làm là kiểm tra xem chúng ta đã thêm các subnet cần cấu hình vào chưa.<br>References:<br>https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2910" disabled="">
+    <label class="form-check-labelx" for="answers-2910">
+    Cross-zone load balancing is not enabled on the ELB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2911" disabled="">
+    
+    <label class="form-check-labelx" for="answers-2911">
+    The ELB is configured as an internal-only load balancer
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-710">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-710" aria-expanded="true" aria-controls="collapse-710">
+    19. A Solutions Architect is designing an application for processing and extracting data from log files. The log files are generated by an application and the number and frequency of updates varies. The files are up to 1 GB in size and processing will take around 40 seconds for each file.<br>Which solution is the most cost-effective?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Cost Optimize</span>
+    </div>
+    </div>
+    <div id="collapse-710" class="accordion-collapse collapse show" aria-labelledby="heading-710" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2912" disabled="">
+    <label class="form-check-labelx" for="answers-2912">
+    <b>Write the log files to an Amazon S3 bucket. Create an event notification to invoke an AWS Lambda function that will process the files</b>
+    <br>
+    <i>Câu hỏi đặt ra cho giải pháp hiệu quả nhất về chi phí vì vậy Serverless solution và automated solution sẽ là lựa chọn tốt nhất.<br>AWS Lambda có thể chạy customer code khi nhận được một Amazon S3 bucket event. Chúng ta upload code lên AWS Lambda và tạo một hàm. Khi Amazon S3 phát hiện một sự kiện thuộc một loại cụ thể (ví dụ: object created event), nó publish event đó lên AWS Lambda và gọi Lambda function. AWS Lambda thực thi function của bạn.<br>References:<br>https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2913" disabled="">
+    <label class="form-check-labelx" for="answers-2913">
+    Write the log files to an Amazon S3 bucket. Create an event notification to invoke an Amazon ECS task to process the files and save to an Amazon S3 bucket
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2914" disabled="">
+    <label class="form-check-labelx" for="answers-2914">
+    Write the log files to an Amazon SQS queue. Use AWS Lambda to process the files from the queue and save to an Amazon S3 bucket
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2915" disabled="">
+    <label class="form-check-labelx" for="answers-2915">
+    Write the log files to an Amazon EC2 instance with an attached EBS volume. After processing, save the files to an Amazon S3 bucket
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-711">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-711" aria-expanded="true" aria-controls="collapse-711">
+    20. An application is running on EC2 instances in a private subnet of an Amazon VPC. A Solutions Architect would like to connect the application to Amazon API Gateway. For security reasons, it is necessary to ensure that no traffic traverses the Internet and to ensure all traffic uses private IP addresses only.<br>How can this be achieved?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-711" class="accordion-collapse collapse show" aria-labelledby="heading-711" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2916" disabled="">
+    <label class="form-check-labelx" for="answers-2916">
+    Create a NAT gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2917" disabled="">
+    <label class="form-check-labelx" for="answers-2917">
+    Create a public VIF on a Direct Connect connection
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2918" disabled="">
+    <label class="form-check-labelx" for="answers-2918">
+    Add the API gateway to the subnet the EC2 instances are located in
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2919" disabled="">
+    <label class="form-check-labelx" for="answers-2919">
+    <b>Create a private API using an interface VPC endpoint</b>
+    <br>
+    <i>Một Interface endpoint sử dụng AWS PrivateLink và một Ẻlastic network interface (ENI) với một private IP đóng vai trò là một điểm vào cho lưu lượng truy cập đến một dịch vụ được hỗ trợ. Sử dụng PrivateLink chúng ta có thể kết nối VPC của mình đến một dịch vụ được hỗ trợ, các dịch vụ đối tác AWS Marketplace được hỗ trợ<br>References:<br>https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-712">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-712" aria-expanded="true" aria-controls="collapse-712">
+    21. The application development team in a company have created a new application written in .NET. A Solutions Architect is looking for a way to easily deploy the application whilst maintaining full control of the underlying resources.<br>Which PaaS service provided by AWS would BEST suit this requirement?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-712" class="accordion-collapse collapse show" aria-labelledby="heading-712" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2920" disabled="">
+    <label class="form-check-labelx" for="answers-2920">
+    CloudFormation
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2921" disabled="">
+    <label class="form-check-labelx" for="answers-2921">
+    CloudFront
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2922" disabled="">
+    <label class="form-check-labelx" for="answers-2922">
+    EC2 Placement Groups
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2923" disabled="">
+    <label class="form-check-labelx" for="answers-2923">
+    <b>Elastic Beanstalk</b>
+    <br>
+    <i>AWS Elastic Beanstalk có thể được sử dụng nhanh chóng triển khai và quản lý các ứng dụng trong AWS cloud. Việc của chúng ta chỉ cần upload code, EB sẽ xử lý các chi tiết triển khai hệ thống, cung cấp dung lượng, AutoScaling, load balancing, appliation health monitoring<br>References:<br>https://aws.amazon.com/elasticbeanstalk/<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-713">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-713" aria-expanded="true" aria-controls="collapse-713">
+    22. A Solutions Architect created a new subnet in an Amazon VPC and launched an Amazon EC2 instance into it. The Solutions Architect needs to directly access the EC2 instance from the Internet and cannot connect. Which steps should be undertaken to troubleshoot the issue? (choose 2)
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-713" class="accordion-collapse collapse show" aria-labelledby="heading-713" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2924" disabled="">
+    <label class="form-check-labelx" for="answers-2924">
+    Check that Security Group has a rule for outbound traffic
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2925" disabled="">
+    <label class="form-check-labelx" for="answers-2925">
+    <b>Check that the instance has a public IP address</b>
+    <br>
+    <i>Để EC2 có thể connect trực tiếp được đến Internet phải đảm bảo route table được liên kết với subnet phải được attach Internet Gateway.<br>Subnet enable "Auto-assign public IPv4 address" (EC2 tự động được public IP khi khởi tạo)<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2926" disabled="">
+    <label class="form-check-labelx" for="answers-2926">
+    <b>Check that the route table associated with the subnet has an entry for an Internet Gateway</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2927" disabled="">
+    <label class="form-check-labelx" for="answers-2927">
+    Check that there is a NAT Gateway configured for the subnet
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2928" disabled="">
+    <label class="form-check-labelx" for="answers-2928">
+    Check that you can ping the instance from another subnet
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-714">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-714" aria-expanded="true" aria-controls="collapse-714">
+    23. A Solutions Architect is designing the compute layer of a serverless application. The compute layer will manage requests from external systems, orchestrate serverless workflows, and execute the business logic.<br>The Architect needs to select the most appropriate AWS services for these functions. Which services should be used for the compute layer? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Serverless</span>
+    </div>
+    </div>
+    <div id="collapse-714" class="accordion-collapse collapse show" aria-labelledby="heading-714" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2929" disabled="">
+    <label class="form-check-labelx" for="answers-2929">
+    Use AWS CloudFormation for orchestrating serverless workflows
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2930" disabled="">
+    <label class="form-check-labelx" for="answers-2930">
+    <b>Use AWS Step Functions for orchestrating serverless workflows</b>
+     <br>
+    <i>Với Amazon API Gateway, bạn có thể chạy API REST được quản lý đầy đủ tích hợp với Lambda để thực thi business logic của bạn và traffic management, authorization và access control, monitoring và API vesioning<br>AWS Step Functions sắp xếp quy trình làm việc serverless bao gồm điều phối, trạng thái và chuỗi chức năng cũng như kết hợp các thực thi lâu dài không được hỗ trợ trong giới hạn thực thi Lambda ( Lambda execution limits) bằng cách chia thành nhiều bước hoặc bằng cách gọi woker chạy trên Amazon Elastic Compute Cloud (Amazon EC2) hoặc on-premises.<br><br>References:<br>https://aws.amazon.com/step-functions/ <br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2931" disabled="">
+    <label class="form-check-labelx" for="answers-2931">
+    Use AWS Elastic Beanstalk for executing the business logic
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2932" disabled="">
+    <label class="form-check-labelx" for="answers-2932">
+    Use Amazon ECS for executing the business logic
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2933" disabled="">
+    <label class="form-check-labelx" for="answers-2933">
+    <b>Use Amazon API Gateway with AWS Lambda for executing the business logic</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-715">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-715" aria-expanded="true" aria-controls="collapse-715">
+    24. A new financial platform has been re-architected to use Docker containers in a micro-services architecture. The new architecture will be implemented on AWS and a Solutions Architect must recommend the solution configuration. For operational reasons, it will be necessary to access the operating system of the instances on which the containers run.<br>Which solution delivery option should the Architect select?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-715" class="accordion-collapse collapse show" aria-labelledby="heading-715" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2934" disabled="">
+    <label class="form-check-labelx" for="answers-2934">
+    ECS with a default cluster
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2935" disabled="">
+    <label class="form-check-labelx" for="answers-2935">
+    EKS with Kubernetes managed infrastructure
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2936" disabled="">
+    <label class="form-check-labelx" for="answers-2936">
+    ECS with the Fargate launch type
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2937" disabled="">
+    <label class="form-check-labelx" for="answers-2937">
+    <b>ECS with the EC2 launch type</b>
+    <br>
+    <i>Amazon Elastic Container Service (ECS) là một dịch vụ quản lý container hiệu suất cao, có khả năng mở rộng cao, hỗ trợ các container Docker và cho phép bạn dễ dàng chạy các ứng dụng trên một cụm (cluster) bản sao Amazon EC2 được quản lý<br>EC2 Launch Type cho phép bạn chạy container trên các EC2 instances mà bạn quản lý để bạn có thể truy cập các phiên bản hệ điều hành.<br>References:<br>https://aws.amazon.com/ecs/features/ <br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-716">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-716" aria-expanded="true" aria-controls="collapse-716">
+    25. An existing Auto Scaling group is running with eight Amazon EC2 instances. A Solutions Architect has attached an Elastic Load Balancer (ELB) to the Auto Scaling group by connecting a Target Group. The ELB is in the same region and already has ten EC2 instances running in the Target Group.<br>When attempting to attach the ELB the request immediately fails, what is the MOST likely cause?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Database</span>
+    </div>
+    </div>
+    <div id="collapse-716" class="accordion-collapse collapse show" aria-labelledby="heading-716" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2938" disabled="">
+    <label class="form-check-labelx" for="answers-2938">
+    One or more of the instances are unhealthy
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2939" disabled="">
+    <label class="form-check-labelx" for="answers-2939">
+    ASGs cannot be edited once defined, you would need to recreate it
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2940" disabled="">
+    <label class="form-check-labelx" for="answers-2940">
+    <b>Adding the 10 EC2 instances to the ASG would exceed the maximum capacity configured </b>
+    <br>
+    <i>Chúng ta có thể attach 1 hoặc nhiều Target group vào ASG của mình, đảm bảo các instances phía sau ALB và ELBs phải cùng region. <br>Nếu thêm một instances vào ASG làm quá dung lương tối đa của ASG thì ASG request sẽ fail.<br>References:<br>https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2941" disabled="">
+    <label class="form-check-labelx" for="answers-2941">
+    You cannot attach running EC2 instances to an ASG
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-717">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-717" aria-expanded="true" aria-controls="collapse-717">
+    26. Amazon CloudWatch is being used to monitor the performance of AWS Lambda. Which metrics does Lambda track? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Serverless</span>
+    </div>
+    </div>
+    <div id="collapse-717" class="accordion-collapse collapse show" aria-labelledby="heading-717" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2942" disabled="">
+    <label class="form-check-labelx" for="answers-2942">
+    Number of users
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2943" disabled="">
+    <label class="form-check-labelx" for="answers-2943">
+    <b>Total number of requests</b>
+    <br>
+    <i>AWS Lambda tự động giám sát Lambda function và báo cáo các chỉ số thông qua Amazon CloudWatch. Lambda theo dõi số lượng yêu cầu, độ trễ cho mỗi request và số lượng request dẫn đến lỗi. Bạn có thể xem tỷ lệ yêu cầu và tỷ lệ lỗi bằng AWS Lambda Console, CloudWatch console và các tài nguyên AWS khác.<br>References:<br>https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2944" disabled="">
+    <label class="form-check-labelx" for="answers-2944">
+    Total number of connections
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2945" disabled="">
+    <label class="form-check-labelx" for="answers-2945">
+    Total number of transactions
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2946" disabled="">
+    <label class="form-check-labelx" for="answers-2946">
+    <b>Latency per request</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-718">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-718" aria-expanded="true" aria-controls="collapse-718">
+    27. A Solutions Architect is conducting an audit and needs to query several properties of EC2 instances in a VPC. What two methods are available for accessing and querying the properties of an EC2 instance such as instance ID, public keys and network interfaces? (choose 2)
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-718" class="accordion-collapse collapse show" aria-labelledby="heading-718" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+     <input class="form-check-input" type="checkbox" value="" id="answers-2947" disabled="">
+    <label class="form-check-labelx" for="answers-2947">
+    Use the EC2 Config service
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2948" disabled="">
+    <label class="form-check-labelx" for="answers-2948">
+    <b>Download and run the Instance Metadata Query Tool</b>
+    <br>
+    <i>Thông tin này được lưu trữ trong instances metadata trên phiên bản. Bạn có thể truy cập instances metadata thông qua URI hoặc bằng cách sử dụng Instance Metadata Query tool.<br>Metadata có sẵn tại http://169.254.169.254/latest/meta-data.<br>Instance Metadata Query tool cho phép bạn truy vấn instances metadata mà không cần phải nhập đầy đủ URI hoặc tên danh mục.<br>References:<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2949" disabled="">
+    <label class="form-check-labelx" for="answers-2949">
+    Run the command “curl http://169.254.169.254/latest/dynamic/instance-identity/”
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2950" disabled="">
+    <label class="form-check-labelx" for="answers-2950">
+    Use the Batch command
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2951" disabled="">
+    <label class="form-check-labelx" for="answers-2951">
+    <b>Run the command “curl http://169.254.169.254/latest/meta-data/”</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-719">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-719" aria-expanded="true" aria-controls="collapse-719">
+    28. A Solutions Architect is deploying a high performance computing (HPC) application on Amazon EC2 instances. The application requires extremely low inter-instance latency. How should the instances be deployed for BEST performance?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-719" class="accordion-collapse collapse show" aria-labelledby="heading-719" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2952" disabled="">
+    <label class="form-check-labelx" for="answers-2952">
+    <b>Use an Elastic Fabric Adapter (EFA) and deploy instances in a cluster placement group</b>
+    <br>
+    <i>Bạn nên sử dụng enhanced networking hoặc Elastic Fabric Adapter (EFA) cho các nút của ứng dụng HPC. Điều này sẽ giúp giảm độ trễ. Ngoài ra, cluster placement group đóng gói các instance gần nhau bên trong AZ.<br>Sử dụng cluster placement group cho phép khối lượng công việc đạt được hiệu suất mạng có độ trễ thấp cần thiết cho giao tiếp nút - nút được kết hợp chặt chẽ, đặc trưng của các ứng dụng HPC.<br><br>References:<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html </i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2953" disabled="">
+    <label class="form-check-labelx" for="answers-2953">
+    Use an instance with enhanced networking and deploy the instances in a partition placement group
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2954" disabled="">
+    <label class="form-check-labelx" for="answers-2954">
+    Add multiple Elastic Network Adapters (ENAs) to each instance and create a NIC team
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2955" disabled="">
+    <label class="form-check-labelx" for="answers-2955">
+    Use an EBS-optimized instance with 10 Gigabit networking and deploy to a single subnet
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-720">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-720" aria-expanded="true" aria-controls="collapse-720">
+    29. An application you manage runs a number of components using a micro-services architecture. Several ECS container instances in your ECS cluster are displaying as disconnected. The ECS instances were created from the Amazon ECS-Optimized AMI. What steps might you take to troubleshoot the issue? (choose 2)
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-720" class="accordion-collapse collapse show" aria-labelledby="heading-720" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2956" disabled="">
+    <label class="form-check-labelx" for="answers-2956">
+    Verify that the instances have the correct IAM group applied
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2957" disabled="">
+    <label class="form-check-labelx" for="answers-2957">
+    <b>Verify that the IAM instance profile has the necessary permissions</b>
+    <br>
+    <i><br>References:<br>https://aws.amazon.com/premiumsupport/knowledge-center/ecs-agent-disconnected/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2958" disabled="">
+    <label class="form-check-labelx" for="answers-2958">
+    <b>Verify that the container instances have the container agent installed</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2959" disabled="">
+    <label class="form-check-labelx" for="answers-2959">
+    Verify that the container agent is running on the container instances
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2960" disabled="">
+    <label class="form-check-labelx" for="answers-2960">
+    Verify that the container instances are using the Fargate launch type
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-721">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-721" aria-expanded="true" aria-controls="collapse-721">
+    30. A Solutions Architect is creating a solution for an application that must be deployed on Amazon EC2 hosts that are dedicated to the client. Instance placement must be automatic and billing should be per instance.<br>Which type of EC2 deployment model should be used?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-721" class="accordion-collapse collapse show" aria-labelledby="heading-721" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2961" disabled="">
+    <label class="form-check-labelx" for="answers-2961">
+    <b>Dedicated Instance</b>
+    <br>
+    <i>Dedicated Instances là phiên bản Amazon EC2 chạy trong VPC trên phần cứng dành riêng cho một khách hàng. Dedicated instances của bạn được cách ly về mặt vật lý ở cấp phần cứng máy chủ với các phiên bản thuộc về các tài khoản AWS khác. Dedicated instances cho phép đặt phiên bản tự động và thanh toán theo từng phiên bản.<br>References:<br>https://aws.amazon.com/ec2/dedicated-hosts/<br>https://aws.amazon.com/ec2/pricing/dedicated-instances/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2962" disabled="">
+    <label class="form-check-labelx" for="answers-2962">
+    Reserved Instance
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2963" disabled="">
+    <label class="form-check-labelx" for="answers-2963">
+    Dedicated Host
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2964" disabled="">
+    <label class="form-check-labelx" for="answers-2964">
+    Cluster Placement Group
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-722">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-722" aria-expanded="true" aria-controls="collapse-722">
+    31. A customer has requested some advice on how to implement security measures in their Amazon VPC. The client has recently been the victim of some hacking attempts. The client wants to implement measures to mitigate further threats. The client has explained that the attacks always come from the same small block of IP addresses.<br>What would be a quick and easy measure to help prevent further attacks?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Security</span>
+    </div>
+    </div>
+    <div id="collapse-722" class="accordion-collapse collapse show" aria-labelledby="heading-722" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2965" disabled="">
+    <label class="form-check-labelx" for="answers-2965">
+    Use CloudFront’s DDoS prevention features
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2966" disabled="">
+    <label class="form-check-labelx" for="answers-2966">
+    Use a Security Group rule that denies connections from the block of IP addresses
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2967" disabled="">
+    <label class="form-check-labelx" for="answers-2967">
+    <b>Use a Network ACL rule that denies connections from the block of IP addresses</b>
+    <br>
+    <i>Với NACL, bạn có thể có các quy tắc (rules) cho phép (allow) và từ chối (deny). Network ACLs chứa danh sách các quy tắc được đánh số thứ tự được đánh giá theo thứ tự từ số thấp d (explicit deny). Network ACLs có các quy tắc gửi đến (inbound) và gửi đi (outbound) riêng biệt và mỗi quy tắc có thể cho phép hoặc từ chối lưu lượng truy cập.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2968" disabled="">
+    <label class="form-check-labelx" for="answers-2968">
+    Create a Bastion Host restrict all connections to the Bastion Host only
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-723">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-723" aria-expanded="true" aria-controls="collapse-723">
+    32. A Solutions Architect has created a new security group in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the security group? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-723" class="accordion-collapse collapse show" aria-labelledby="heading-723" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2969" disabled="">
+    <label class="form-check-labelx" for="answers-2969">
+    There are is an inbound rule that allows traffic from the Internet Gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2970" disabled="">
+    <label class="form-check-labelx" for="answers-2970">
+    <b>There is an outbound rule that allows all traffic to all IP addresses</b>
+    <br>
+    <i>Custom security groups không có quy tắc cho phép đến - inbound allow rules (tất cả lưu lượng đến đều bị từ chối theo mặc định) trong khi default security groups có quy tắc cho phép đến (cho phép lưu lượng từ bên trong nhóm). Tất cả outbound được cho phép theo mặc định trong cả Custom security groups và default security groups.<br>Các security groups hoạt động giống như firewall ở cấp độ instance. Cụ thể, các security groups hoạt động ở cấp độ giao diện mạng của một EC2 instance. Bạn chỉ có thể chỉ định allow rules trong một security groups, bạn không thể chỉ định deny rules và có một deny rule ngầm (implicit deny rule) ở security groups. Tất cả các rules được đánh giá cho đến khi được allow hoặc tiếp tục cho đến khi bị deny ngầm. Bạn có thể tạo các quy tắc vào (ingress) và ra (egress).<br><br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2971" disabled="">
+    <label class="form-check-labelx" for="answers-2971">
+    There is an inbound rule allowing traffic from the Internet to port 22 for management
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2972" disabled="">
+    <label class="form-check-labelx" for="answers-2972">
+    There is an outbound rule allowing traffic to the Internet Gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2973" disabled="">
+    <label class="form-check-labelx" for="answers-2973">
+    <b>There are no inbound rules and traffic will be implicitly denied </b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-724">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-724" aria-expanded="true" aria-controls="collapse-724">
+    33. An Amazon EC2 instance has been launched into an Amazon VPC. A Solutions Architect needs to ensure that instances have both a private and public DNS hostnames. Assuming settings were not changed during creation of the VPC, how will DNS hostnames be assigned by default? (choose 2)
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-724" class="accordion-collapse collapse show" aria-labelledby="heading-724" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2974" disabled="">
+    <label class="form-check-labelx" for="answers-2974">
+    In a default VPC instances will be assigned a private but not a public DNS hostname
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2975" disabled="">
+    <label class="form-check-labelx" for="answers-2975">
+    <b>In a default VPC instances will be assigned a public and private DNS hostname</b>
+    <br>
+    <i>Khi khởi chạy một instacne trong VPC mặc định, chúng tôi cung cấp cho instacne đó public and private DNS hostnames tương ứng với public IPv4 and private IPv4 addresses cho instacne đó.<br>Khi bạn khởi chạy một instacne trong VPC nondefault, chúng tôi cung cấp cho instacne đó một private DNS hostnames và chúng tôi có thể cung cấp một private DNS hostnames public, tùy thuộc vào các DNS attributes mà bạn chỉ định cho VPC và nếu instance của bạn có public IPv4 address.<br>Tất cả các câu trả lời kháĐáp án C không chính xác với cài đặt mặc định.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2976" disabled="">
+    <label class="form-check-labelx" for="answers-2976">
+    In all VPCs instances no DNS hostnames will be assigned
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2977" disabled="">
+    <label class="form-check-labelx" for="answers-2977">
+    <b>In a non-default VPC instances will be assigned a private but not a public DNS hostname</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2978" disabled="">
+    <label class="form-check-labelx" for="answers-2978">
+    In a non-default VPC instances will be assigned a public and private DNS hostname
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-725">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-725" aria-expanded="true" aria-controls="collapse-725">
+    34. A customer is deploying services in a hybrid cloud model. The customer has mandated that data is transferred directly between cloud data centers, bypassing ISPs.<br>Which AWS service can be used to enable hybrid cloud connectivity?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-725" class="accordion-collapse collapse show" aria-labelledby="heading-725" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2979" disabled="">
+    <label class="form-check-labelx" for="answers-2979">
+    Amazon Route 53
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2980" disabled="">
+    <label class="form-check-labelx" for="answers-2980">
+    IPSec VPN
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2981" disabled="">
+    <label class="form-check-labelx" for="answers-2981">
+    <b>AWS Direct Connect</b>
+    <br>
+    <i>Với AWS Direct Connect, bạn có thể kết nối với tất cả các tài nguyên AWS của mình trong AWS Region, transfer dữ liệu quan trọng cho doanh nghiệp của bạn trực tiếp từ trung tâm dữ liệu (datacenter), văn phòng hoặc môi trường vị trí đến và đi từ AWS, bỏ qua nhà cung cấp dịch vụ Internet và loại bỏ tắc nghẽn mạng.<br>References:<br>https://aws.amazon.com/directconnect/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2982" disabled="">
+    <label class="form-check-labelx" for="answers-2982">
+    Amazon VPC
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-726">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-726" aria-expanded="true" aria-controls="collapse-726">
+    35. A company is transitioning their web presence into the AWS cloud. As part of the migration the company will be running a web application both on-premises and in AWS for a period of time. During the period of co-existence the client would like 80% of the traffic to hit the AWS-based web servers and 20% to be directed to the on-premises web servers.<br>What method can a Solutions Architect use to distribute traffic as requested?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-726" class="accordion-collapse collapse show" aria-labelledby="heading-726" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2983" disabled="">
+    <label class="form-check-labelx" for="answers-2983">
+    Use a Network Load Balancer to distribute traffic based on Instance ID
+    <br>
+    <i></i>
+    
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2984" disabled="">
+    <label class="form-check-labelx" for="answers-2984">
+    Use Route 53 with a simple routing policy
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2985" disabled="">
+    <label class="form-check-labelx" for="answers-2985">
+    Use an Application Load Balancer to distribute traffic based on IP address
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2986" disabled="">
+    <label class="form-check-labelx" for="answers-2986">
+    <b>Use Route 53 with a weighted routing policy and configure the respective weights</b>
+    <br>
+    <i>Route 53 weighted routing policy có trọng số của Route 53 tương tự như simple routing policy nhưng bạn có thể chỉ định trọng số cho mỗi địa chỉ IP. Bạn tạo các bản ghi có cùng tên và kiểu và gán cho mỗi bản ghi một trọng số tương đối là một giá trị số ủng hộ một IP hơn một IP khác (các giá trị phải tổng cộng là 100)<br>References:<br>https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-727">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-727" aria-expanded="true" aria-controls="collapse-727">
+    36. A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-727" class="accordion-collapse collapse show" aria-labelledby="heading-727" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2987" disabled="">
+    <label class="form-check-labelx" for="answers-2987">
+    There is an inbound rule that allows all traffic from any address
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2988" disabled="">
+    <label class="form-check-labelx" for="answers-2988">
+    <b>There is an inbound rule that allows all traffic from the security group itself</b>
+    <br>
+    <i>Default security groups có quy tắc cho phép inbound (cho phép lưu lượng truy cập từ bên trong nhóm) trong khi các custom security groups không có quy tắc cho phép đến (tất cả lưu lượng đến đều bị từ chối theo mặc định). Tất cả lưu lượng ra ngoài được cho phép theo mặc định trong các custom security groups và default security groups.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2989" disabled="">
+    <label class="form-check-labelx" for="answers-2989">
+    <b>There is an outbound rule that allows all traffic to all addresses</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2990" disabled="">
+    <label class="form-check-labelx" for="answers-2990">
+    There is an outbound rule that allows all traffic to the security group itself
+    <br>
+    <i></i>
+    
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2991" disabled="">
+    <label class="form-check-labelx" for="answers-2991">
+    There is an outbound rule that allows traffic to the VPC router
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-728">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-728" aria-expanded="true" aria-controls="collapse-728">
+    37. A web application runs on a series of Amazon EC2 instances behind an Application Load Balancer (ALB). A Solutions Architect is updating the configuration with a health check and needs to select the protocol to use. What options are available? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-728" class="accordion-collapse collapse show" aria-labelledby="heading-728" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2992" disabled="">
+    <label class="form-check-labelx" for="answers-2992">
+    <b>HTTPS</b>
+    <br>
+    <i>Application Load Balancer định kỳ gửi yêu cầu đến các target đã đăng ký (registered targets) để kiểm tra trạng thái của chúng. Được gọi là health checks<br>Mỗi nút của load balancer chỉ định tuyến các yêu cầu đến các healthy target trong các Availability Zones được kích hoạt cho load balancer. Mỗi Load banlancer node kiểm tra tình trạng của từng target, sử dụng health check settings cho các target groups mà target được đăng ký. Sau khi target của bạn được đăng ký, nó phải pass một health check để được coi là healthy. Sau mỗi lần kiểm tra tình trạng hoàn tất, nút cân bằng tải đóng kết nối đã được thiết lập để kiểm tra tình trạng.<br>Nếu một nhóm mục tiêu chỉ chứa các mục tiêu đã đăng ký unhealthy, các nút cân bằng tải sẽ định tuyến các yêu cầu qua các unhealthy target của nó.<br>Đối với một ALB, các giao thức có thể có là HTTP và HTTPS. Mặc định là giao thức HTTP.<br>References:<br>https://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-health-checks.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2993" disabled="">
+    <label class="form-check-labelx" for="answers-2993">
+    <b>HTTP</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2994" disabled="">
+    <label class="form-check-labelx" for="answers-2994">
+    TCP
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2995" disabled="">
+    <label class="form-check-labelx" for="answers-2995">
+    SSL
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-2996" disabled="">
+    <label class="form-check-labelx" for="answers-2996">
+    ICMP
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-729">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-729" aria-expanded="true" aria-controls="collapse-729">
+    38. An on-premise data center will be connected to an Amazon VPC by a hardware VPN that has public and VPN-only subnets. The security team has requested that traffic hitting public subnets on AWS that’s destined to on-premise applications must be directed over the VPN to the corporate firewall.<br>How can this be achieved?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-729" class="accordion-collapse collapse show" aria-labelledby="heading-729" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2997" disabled="">
+    <label class="form-check-labelx" for="answers-2997">
+    <b>In the public subnet route table, add a route for your remote network and specify the virtual private gateway as the target</b>
+    <br>
+    <i>Route tables nơi lưu lượng mạng được hướng đến. Trong route table, bạn phải thêm một route cho mạng từ xa (remote network) của mình và chỉ định virtual private gateway làm target. Điều này cho phép lưu lượng truy cập từ VPC dành cho mạng từ xa của bạn định tuyến qua virtual private gateway và qua một trong các VPN tunnels . Bạn có thể bật route propagation cho route table của mình để tự động truyền các route mạng tới route table.<br><br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario3.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2998" disabled="">
+    <label class="form-check-labelx" for="answers-2998">
+    Configure a NAT Gateway and configure all traffic to be directed via the virtual private gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-2999" disabled="">
+    <label class="form-check-labelx" for="answers-2999">
+    In the public subnet route table, add a route for your remote network and specify the customer gateway as the target
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3000" disabled="">
+    <label class="form-check-labelx" for="answers-3000">
+    In the VPN-only subnet route table, add a route that directs all Internet traffic to the virtual private gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-730">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-730" aria-expanded="true" aria-controls="collapse-730">
+    39. A company requires an Elastic Load Balancer (ELB) for an application they are planning to deploy on AWS. The application requires extremely high throughput and extremely low latencies. The connections will be made using the TCP protocol and the ELB must support load balancing to multiple ports on an instance. Which ELB would should the company use?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-730" class="accordion-collapse collapse show" aria-labelledby="heading-730" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3001" disabled="">
+    <label class="form-check-labelx" for="answers-3001">
+    Application Load Balancer
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3002" disabled="">
+    <label class="form-check-labelx" for="answers-3002">
+    Classic Load Balancer
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3003" disabled="">
+    <label class="form-check-labelx" for="answers-3003">
+    <b>Network Load Balancer </b>
+    <br>
+    <i>Network Load Balancer hoạt động ở connection level (Layer 4), định tuyến kết nối đến các targets - Amazon EC2 instances, containers và IP addresses dựa trên IP protocol data. Nó được kiến ​​trúc để xử lý hàng triệu yêu cầu / giây, các mẫu lưu lượng truy cập thay đổi đột ngột và cung cấp độ trễ cực kỳ thấp (extremely low latencies).<br>NLB cung cấp thông lượng cao (throughput ) và độ trễ cực thấp và được thiết kế để xử lý lưu lượng khi nó tăng và có thể cân bằng tải hàng triệu yêu cầu / giây. NLB cũng hỗ trợ cân bằng tải cho nhiều cổng trên một phiên bản.<br>References:<br>https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3004" disabled="">
+    <label class="form-check-labelx" for="answers-3004">
+    Route 53
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-731">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-731" aria-expanded="true" aria-controls="collapse-731">
+    40. A Solutions Architect has created a new Network ACL in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the Network ACL? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-731" class="accordion-collapse collapse show" aria-labelledby="heading-731" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3005" disabled="">
+    <label class="form-check-labelx" for="answers-3005">
+    <b>There is a default outbound rule denying all traffic</b>
+    <br>
+    <i>VPC tự động đi kèm với default network ACL cho phép tất cả lưu lượng truy cập vào / ra. Custom NACL từ chối tất cả lưu lượng truy cập cả vào và đi theo mặc định.<br>Network ACL ở cấp subnet và bạn có thể có các quy tắc cho phép và từ chối. Network ACLs có các inbound rules và outbound rules riêng biệt và mỗi quy tắc (rules) có thể cho phép (allow) hoặc từ chối (deny) lưu lượng truy cập.<br>Network ACL là stateless nên các phản hồi (responses) phải tuân theo các quy tắc về hướng lưu lượng (direction of traffic). NACL chỉ áp dụng cho lưu lượng truy cập vào hoặc đi ra subnet chứ không áp dụng cho lưu lượng truy cập bên trong subnet.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3006" disabled="">
+    <label class="form-check-labelx" for="answers-3006">
+    There is a default outbound rule allowing all traffic
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3007" disabled="">
+    <label class="form-check-labelx" for="answers-3007">
+    There is a default outbound rule allowing traffic to the Internet Gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3008" disabled="">
+    <label class="form-check-labelx" for="answers-3008">
+    There is a default inbound rule allowing traffic from the VPC CIDR block
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3009" disabled="">
+    <label class="form-check-labelx" for="answers-3009">
+    <b>There is a default inbound rule denying all traffic </b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-732">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-732" aria-expanded="true" aria-controls="collapse-732">
+    41. A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-732" class="accordion-collapse collapse show" aria-labelledby="heading-732" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3010" disabled="">
+    <label class="form-check-labelx" for="answers-3010">
+    <b>Integrate CloudFront with S3 to cache the content </b>
+    <br>
+    <i>Amazon S3 tự động điều chỉnh tỷ lệ yêu cầu. Ví dụ: ứng dụng của bạn có thể đạt được ít nhất 3.500 PUT / POST / DELETE và 5.500 yêu cầu GET mỗi giây cho mỗi prefix trong một bucket. Không có giới hạn đối với số lượng prefixes trong một nhóm<br>Nếu khối lượng công việc của chính của bạn là gửi các GET request, ngoài các hướng dẫn trước, bạn nên cân nhắc sử dụng Amazon CloudFront để tối ưu hóa hiệu suất. Bằng cách tích hợp CloudFront với Amazon S3, bạn có thể phân phối nội dung (distribute content) cho người dùng của mình với độ trễ thấp và tốc độ truyền dữ liệu cao.<br>References:<br>https://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html<br><br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3011" disabled="">
+    <label class="form-check-labelx" for="answers-3011">
+    Use ElastiCache to cache the content
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3012" disabled="">
+    <label class="form-check-labelx" for="answers-3012">
+    Use cross-region replication to spread the load across regions
+    <br>
+    <i></i>
+    
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3013" disabled="">
+    <label class="form-check-labelx" for="answers-3013">
+    Use S3 Transfer Acceleration
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-733">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-733" aria-expanded="true" aria-controls="collapse-733">
+    42. A Solutions Architect has created a VPC and is in the process of formulating the subnet design. The VPC will be used to host a two-tier application that will include Internet facing web servers, and internal-only DB servers. Zonal redundancy is required.<br>How many subnets are required to support this requirement?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-733" class="accordion-collapse collapse show" aria-labelledby="heading-733" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3014" disabled="">
+    <label class="form-check-labelx" for="answers-3014">
+    1 subnet
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3015" disabled="">
+    <label class="form-check-labelx" for="answers-3015">
+    6 subnets
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3016" disabled="">
+    <label class="form-check-labelx" for="answers-3016">
+    <b>4 subnets</b>
+    <br>
+    <i>Zonal redundancy chỉ ra rằng kiến trúc nên được chia thành nhiều Availability Zones. Các subnet được ánh xạ 1: 1 với AZ.<br>Một public subnet nên được sử dụng cho các máy chủ web (Internet-facing web servers ) và một private subnet nên được sử dụng cho các máy chủ DB (internal-only DB servers). Do đó, bạn cần 4 mạng con - 2 (để dự phòng - redundancy) cho mỗi public subnet / private subnet.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3017" disabled="">
+    <label class="form-check-labelx" for="answers-3017">
+    2 subnets
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-734">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-734" aria-expanded="true" aria-controls="collapse-734">
+    43. Three AWS accounts are owned by the same company but in different regions. Account Z has two AWS Direct Connect connections to two separate company offices. Accounts A and B require the ability to route across account Z’s Direct Connect connections to each company office. A Solutions Architect has created an AWS Direct Connect gateway in account Z.<br>How can the required connectivity be configured?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-734" class="accordion-collapse collapse show" aria-labelledby="heading-734" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3018" disabled="">
+    <label class="form-check-labelx" for="answers-3018">
+    Create a PrivateLink connection in Account Z and ENIs in accounts A and B
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3019" disabled="">
+    <label class="form-check-labelx" for="answers-3019">
+    Associate the Direct Connect gateway to a transit gateway in each region
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3020" disabled="">
+    <label class="form-check-labelx" for="answers-3020">
+    Create a VPC Endpoint to the Direct Connect gateway in account A and B
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3021" disabled="">
+    <label class="form-check-labelx" for="answers-3021">
+    <b>Associate the Direct Connect gateway to a virtual private gateway in account A and B
+    </b>
+    <br>
+    <i>Bạn có thể liên kết cổng AWS Direct Connect với một trong các cổng sau:<br>- Một transit gateway khi bạn có nhiều VPCs trong cùng một Region.<br>- Một virtual private gateway.<br>Trong trường hợp này, tài khoản Z sở hữu cổng Direct Connect gateway nên VPG trong tài khoản A và B phải được liên kết với nó để cho phép cấu hình này hoạt động. Sau khi Tài khoản Z chấp nhận các đề xuất, Tài khoản A và Tài khoản B có thể định tuyến lưu lượng truy cập từ virtual private gateway của họ đến Direct Connect gateway.<br>References:<br>https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html<br><br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-735">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-735" aria-expanded="true" aria-controls="collapse-735">
+    44. A government agency is using CloudFront for a web application that receives personally identifiable information (PII) from citizens.<br>What feature of CloudFront applies an extra level of encryption at CloudFront edge locations to ensure the PII data is secured end-to-end? <br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-735" class="accordion-collapse collapse show" aria-labelledby="heading-735" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3022" disabled="">
+    <label class="form-check-labelx" for="answers-3022">
+    Origin access identity
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3023" disabled="">
+    <label class="form-check-labelx" for="answers-3023">
+    <b>Field-level encryption</b>
+    <br>
+    <i>Với Amazon CloudFront, bạn có thể thực thi các kết nối end-to-end an toàn tới máy chủ gốc bằng cách sử dụng HTTPS. Field-level encryption bổ sung một lớp bảo mật cho phép bạn bảo vệ dữ liệu cụ thể trong suốt quá trình xử lý hệ thống để chỉ một số ứng dụng nhất định có thể nhìn thấy nó.<br>Field-level encryption cho phép bạn cho phép người dùng tải thông tin nhạy cảm(sensitive information) lên máy chủ web của bạn một cách an toàn. Sensitive information do người dùng của bạn cung cấp được mã hóa ở cạnh(the edge) , gần với người dùng và vẫn được mã hóa trong toàn bộ ngăn xếp ứng dụng của bạn. Mã hóa này đảm bảo rằng chỉ những ứng dụng cần dữ liệu — và có thông tin xác thực để giải mã dữ liệu — mới có thể làm như vậy.<br>References:<br>https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3024" disabled="">
+    <label class="form-check-labelx" for="answers-3024">
+    Object invalidation
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3025" disabled="">
+    <label class="form-check-labelx" for="answers-3025">
+      RTMP distribution
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-736">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-736" aria-expanded="true" aria-controls="collapse-736">
+    45. A company has multiple Amazon VPCs that are peered with each other. The company would like to use a single Elastic Load Balancer (ELB) to route traffic to multiple EC2 instances in peered VPCs within the same region. How can this be achieved?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-736" class="accordion-collapse collapse show" aria-labelledby="heading-736" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3026" disabled="">
+    <label class="form-check-labelx" for="answers-3026">
+    <b>This is possible using the Network Load Balancer (NLB) and Application Load Balancer (ALB) if using IP addresses as targets</b>
+    <br>
+    <i>Với ALB và NLB địa chỉ IP có thể được sử dụng để đăng ký:<br>- Các Instances trong VPC ngang hàng.<br>- Các tài nguyên AWS (AWS resources) có thể định địa chỉ bằng địa chỉ IP và cổng.<br>- On-premises resources được liên kết với AWS thông quaDirect Connect hoặc VPN connection.<br>References:<br>https://aws.amazon.com/blogs/aws/new-application-load-balancing-via-ip-address-to-aws-on-premises-resources/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3027" disabled="">
+    <label class="form-check-labelx" for="answers-3027">
+    This is possible using the Classic Load Balancer (CLB) if using Instance IDs
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3028" disabled="">
+    <label class="form-check-labelx" for="answers-3028">
+    This is not possible with ELB, you would need to use Route 53
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3029" disabled="">
+    <label class="form-check-labelx" for="answers-3029">
+    This is not possible, the instances that an ELB routes traffic to must be in the same VPC
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-737">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-737" aria-expanded="true" aria-controls="collapse-737">
+    46. A Solutions Architect needs to capture information about the traffic that reaches an Amazon Elastic Load Balancer. The information should include the source, destination, and protocol.<br>What is the most secure and reliable method for gathering this data?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-737" class="accordion-collapse collapse show" aria-labelledby="heading-737" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3030" disabled="">
+    <label class="form-check-labelx" for="answers-3030">
+    <b>Create a VPC flow log for each network interface associated with the ELB</b>
+    <br>
+    <i>Bạn có thể sử dụng VPC Flow Logs để nắm bắt thông tin chi tiết về lưu lượng truy cập đến và đi từ Elastic Load Balancer của bạn. Tạo flow log cho từng network interface cho load balancer của bạn. Có một network interface cho mỗi subnet của balancer subnet.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.htmlhttps://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-monitoring.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3031" disabled="">
+    <label class="form-check-labelx" for="answers-3031">
+    Enable Amazon CloudTrail logging and configure packet capturing
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3032" disabled="">
+    <label class="form-check-labelx" for="answers-3032">
+    Use Amazon CloudWatch Logs to review detailed logging information
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3033" disabled="">
+    <label class="form-check-labelx" for="answers-3033">
+    Create a VPC flow log for the subnets in which the ELB is running
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-738">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-738" aria-expanded="true" aria-controls="collapse-738">
+    47. An application uses an Amazon RDS database and Amazon EC2 instances in a web tier. The web tier instances must not be directly accessible from the internet to improve security.<br>How can a Solutions Architect meet these requirements?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-738" class="accordion-collapse collapse show" aria-labelledby="heading-738" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3034" disabled="">
+    <label class="form-check-labelx" for="answers-3034">
+    Launch the EC2 instances in a private subnet with a NAT gateway and update the route table
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3035" disabled="">
+    <label class="form-check-labelx" for="answers-3035">
+    <b>Launch the EC2 instances in a private subnet and create an Application Load Balancer in a public subnet</b>
+    <br>
+    <i>Để ngăn kết nối trực tiếp với các phiên bản EC2 từ internet, bạn có thể triển khai các phiên bản EC2 của mình trong một private subnet và có ELB trong một public subnet. Để cấu hình điều này, bạn phải enable một public subnet trong ELB ở cùng AZ với private subnet.<br>References:<br>https://aws.amazon.com/premiumsupport/knowledge-center/public-load-balancer-private-ec2/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3036" disabled="">
+    <label class="form-check-labelx" for="answers-3036">
+    Launch the EC2 instances in a public subnet and use AWS WAF to protect the instances from internet-based attacks
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3037" disabled="">
+    <label class="form-check-labelx" for="answers-3037">
+    Launch the EC2 instances in a public subnet and create an Application Load Balancer in a public subnet
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-739">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-739" aria-expanded="true" aria-controls="collapse-739">
+    48. A company is deploying a new two-tier web application that uses EC2 web servers and a DynamoDB database backend. An Internet facing ELB distributes connections between the web servers.<br>The Solutions Architect has created a security group for the web servers and needs to create a security group for the ELB. What rules should be added? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-739" class="accordion-collapse collapse show" aria-labelledby="heading-739" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3038" disabled="">
+    <label class="form-check-labelx" for="answers-3038">
+    <b>Add an Inbound rule that allows HTTP/HTTPS, and specify the source as 0.0.0.0/0 </b>
+    <br>
+    <i>Một inbound rule phải được tạo cho các giao thức có liên quan (HTTP / HTTPS) và source phải được đặt thành bất kỳ địa chỉ nào (0.0.0.0/0).<br>Outbound rule phải chuyển tiếp(forward) các giao thức có liên quan (HTTP / HTTPS) và destination phải được đặt thành web server security group.<br>Lưu ý rằng trên web server security group, Inbound rule cho phép HTTP / HTTPS từ ELB security group.<br>References:<br>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3039" disabled="">
+    <label class="form-check-labelx" for="answers-3039">
+    Add an Outbound rule that allows ALL TCP, and specify the destination as the Internet Gateway
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3040" disabled="">
+    <label class="form-check-labelx" for="answers-3040">
+    Add an Inbound rule that allows HTTP/HTTPS, and specify the source as 0.0.0.0/32
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3041" disabled="">
+    <label class="form-check-labelx" for="answers-3041">
+     <b>Add an Outbound rule that allows HTTP/HTTPS, and specify the destination as the web server security group</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3042" disabled="">
+    <label class="form-check-labelx" for="answers-3042">
+    Add an Outbound rule that allows HTTP/HTTPS, and specify the destination as VPC CIDR
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-740">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-740" aria-expanded="true" aria-controls="collapse-740">
+    49. An Amazon EC2 instance behind an Elastic Load Balancer (ELB) is in the process of being de-registered. Which ELB feature is used to allow existing connections to close cleanly?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Computing</span>
+    </div>
+    </div>
+    <div id="collapse-740" class="accordion-collapse collapse show" aria-labelledby="heading-740" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3043" disabled="">
+    <label class="form-check-labelx" for="answers-3043">
+    Deletion Protection
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3044" disabled="">
+    <label class="form-check-labelx" for="answers-3044">
+    Sticky Sessions
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3045" disabled="">
+    <label class="form-check-labelx" for="answers-3045">
+    Proxy Protocol
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3046" disabled="">
+    <label class="form-check-labelx" for="answers-3046">
+    <b>Connection Draining</b>
+    <br>
+    <i>Connection draining được bật theo mặc định và cung cấp một khoảng thời gian để các kết nối hiện có hoàn toàn. Khi Connection draining đang hoạt động, một ELB sẽ ở trạng thái “nService: Instance deregistration currently in progress”.<br>References:<br>https://aws.amazon.com/about-aws/whats-new/2014/03/20/elastic-load-balancing-supports-connection-draining/<br><br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-741">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-741" aria-expanded="true" aria-controls="collapse-741">
+    50. A company needs to capture detailed information about all HTTP requests that are processed by their Internet facing Application Load Balancer (ALB). The company requires information on the requester, IP address, and request type for analyzing traffic patterns to better understand their customer base.<br>Which actions should a Solutions Architect recommend?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Network System</span>
+    </div>
+    </div>
+    <div id="collapse-741" class="accordion-collapse collapse show" aria-labelledby="heading-741" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3047" disabled="">
+    <label class="form-check-labelx" for="answers-3047">
+    Configure metrics in CloudWatch for the ALB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3048" disabled="">
+    <label class="form-check-labelx" for="answers-3048">
+    Use CloudTrail to capture all API calls made to the ALB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3049" disabled="">
+    <label class="form-check-labelx" for="answers-3049">
+    Enable EC2 detailed monitoring
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3050" disabled="">
+    <label class="form-check-labelx" for="answers-3050">
+    <b>Enable Access Logs and store the data on S3</b>
+    <br>
+    <i>Bạn có enable access logs trên ALB và điều này sẽ cung cấp thông tin cần thiết bao gồm người yêu cầu, IP và loại yêu cầu. Access logs không được bật theo mặc định. Bạn có thể tùy chọn lưu trữ và giữ lại log files trên S3.<br>References:<br>https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-742">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-742" aria-expanded="true" aria-controls="collapse-742">
+    51. A company has multiple AWS accounts for several environments (Prod, Dev, Test etc.). A Solutions Architect would like to copy an Amazon EBS snapshot from DEV to PROD. The snapshot is from an EBS volume that was encrypted with a custom key.<br>What steps must be performed to share the encrypted EBS snapshot with the Prod account? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-742" class="accordion-collapse collapse show" aria-labelledby="heading-742" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+     <input class="form-check-input" type="checkbox" value="" id="answers-3051" disabled="">
+    <label class="form-check-labelx" for="answers-3051">
+    Create a snapshot of the unencrypted volume and share it with the Prod account
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3052" disabled="">
+    <label class="form-check-labelx" for="answers-3052">
+    <b>Modify the permissions on the encrypted snapshot to share it with the Prod account </b>
+    <br>
+    <i>Khi một EBS volume được mã hóa bằng custom key , bạn phải chia sẻ custom key với tài khoản PROD. Bạn cũng cần sửa đổi các quyền trên snapshot để chia sẻ nó với tài khoản PROD. Tài khoản PROD phải copy snapshot đó trước khi họ có thể tạo volumes từ snapshot.<br>Lưu ý rằng bạn không thể chia sẻ các encrypted volumes được tạo bằng khóa CMK mặc định và bạn không thể thay đổi khóa CMK được sử dụng để mã hóa một ổ đĩa.<br>References:<br>https://aws.amazon.com/blogs/aws/new-cross-account-copying-of-encrypted-ebs-snapshots/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3053" disabled="">
+    <label class="form-check-labelx" for="answers-3053">
+    Use CloudHSM to distribute the encryption keys use to encrypt the volume
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3054" disabled="">
+    <label class="form-check-labelx" for="answers-3054">
+    Make a copy of the EBS volume and unencrypt the data in the process
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3055" disabled="">
+    <label class="form-check-labelx" for="answers-3055">
+    <b>Share the custom key used to encrypt the volume</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-743">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-743" aria-expanded="true" aria-controls="collapse-743">
+    52. A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration.<br>Which actions should a Solutions Architect take?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Migration</span>
+    </div>
+    </div>
+    <div id="collapse-743" class="accordion-collapse collapse show" aria-labelledby="heading-743" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3056" disabled="">
+    <label class="form-check-labelx" for="answers-3056">
+    Migrate the data to Amazon S3 using and AWS Snowball Edge device
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3057" disabled="">
+    <label class="form-check-labelx" for="answers-3057">
+    Migrate the data to Amazon EFS using the AWS Server Migration Service (SMS)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3058" disabled="">
+    <label class="form-check-labelx" for="answers-3058">
+    <b>Migrate the data to Amazon FSx for Windows File Server using AWS DataSync</b>
+    <br>
+    <i>Amazon FSx dành cho Windows File Server cung cấp bộ lưu trữ tệp được quản lý đầy đủ, có độ tin cậy cao và có thể mở rộng, có thể truy cập được qua giao thức Server Message Block (SMB) tiêu chuẩn công nghiệp. Đây là điểm đến phù hợp nhất cho trường hợp này.<br>AWS DataSync có thể được sử dụng để di chuyển một lượng lớn dữ liệu trực tuyến giữa on-premises storage và Amazon S3, Amazon EFS hoặc Amazon FSx for Windows File Server. Source datastore có thể là các máy chủ tập tin Server Message Block (SMB).<br>References:<br>https://aws.amazon.com/fsx/windows/<br>https://aws.amazon.com/datasync/features/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3059" disabled="">
+    <label class="form-check-labelx" for="answers-3059">
+    Migrate the data to Amazon FSx for Lustre using AWS DataSync
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-744">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-744" aria-expanded="true" aria-controls="collapse-744">
+    53. A Solutions Architect needs a storage solution for a fleet of Linux web application servers. The solution should provide a file system interface and be able to support millions of files. Which AWS service should the Architect choose?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-744" class="accordion-collapse collapse show" aria-labelledby="heading-744" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3060" disabled="">
+    <label class="form-check-labelx" for="answers-3060">
+    Amazon S3
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3061" disabled="">
+    <label class="form-check-labelx" for="answers-3061">
+    Amazon ElastiCache
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3062" disabled="">
+    <label class="form-check-labelx" for="answers-3062">
+    Amazon EBS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3063" disabled="">
+    <label class="form-check-labelx" for="answers-3063">
+    <b>Amazon EFS</b>
+    <br>
+    <i>Amazon Elastic File System (EFS) là giải pháp lưu trữ duy nhất trong danh sách file system interface. Nó cũng hỗ trợ hàng triệu tệp theo yêu cầu.<br>References:<br>https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-745">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-745" aria-expanded="true" aria-controls="collapse-745">
+    54. A Solutions Architect needs to create a file system that can be concurrently accessed by multiple Amazon EC2 instances across multiple availability zones. The file system needs to support high throughput and the ability to burst. As the data that will be stored on the file system will be sensitive, it must be encrypted at rest and in transit.<br>Which storage solution should the Solutions Architect use for the shared file system?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-745" class="accordion-collapse collapse show" aria-labelledby="heading-745" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3064" disabled="">
+    <label class="form-check-labelx" for="answers-3064">
+    <b>Use the Elastic File System (EFS) and mount the file system using NFS</b>
+    <br>
+    <i>EFS là một dịch vụ được quản lý hoàn toàn giúp dễ dàng thiết lập và mở rộng quy mô lưu trữ tệp trong Amazon Cloud. EFS file systems được gắn kết bằng giao thức NFSv4.1. EFS được thiết kế cho phép mức thông lượng cao trong một khoảng thời gian. EFS cũng cung cấp khả năng mã hóa dữ liệu ở trạng thái nghỉ (at rest) và khi truyền (in transit).<br>References:<br>https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3065" disabled="">
+    <label class="form-check-labelx" for="answers-3065">
+    Add EBS volumes to each EC2 instance and use an ELB to distribute data evenly between the volumes
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3066" disabled="">
+    <label class="form-check-labelx" for="answers-3066">
+    Add EBS volumes to each EC2 instance and configure data replication
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3067" disabled="">
+    <label class="form-check-labelx" for="answers-3067">
+    Use the Elastic Block Store (EBS) and mount the file system at the block level
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-746">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-746" aria-expanded="true" aria-controls="collapse-746">
+    55. A Solutions Architect is attempting to clean up unused EBS volumes and snapshots to save some space and cost. How many of the most recent snapshots of an EBS volume need to be maintained to guarantee that you can recreate the full EBS volume from the snapshot?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-746" class="accordion-collapse collapse show" aria-labelledby="heading-746" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3068" disabled="">
+    <label class="form-check-labelx" for="answers-3068">
+    You must retain all snapshots as the process is incremental and therefore data is required from each snapshot
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3069" disabled="">
+    <label class="form-check-labelx" for="answers-3069">
+    <b>Only the most recent snapshot. Snapshots are incremental, but the deletion process will ensure that no data is lost</b>
+    <br>
+    <i>Snapshots ghi lại trạng thái tại thời điểm (point-in-time) của một instance. Nếu bạn tạo snapshots định kỳ cho một volume, ảnh chụp nhanh sẽ tăng dần (incremental), có nghĩa là chỉ các blocks trên thiết bị đã thay đổi sau last snapshot của bạn mới được lưu trong snapshot.<br>Mặc dù các snapshot được lưu tăng dần(saved incrementally), quy trình xóa snapshot được thiết kế để bạn chỉ cần giữ lại snapshot gần đây nhất để khôi phục volume.<br>References:<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3070" disabled="">
+    <label class="form-check-labelx" for="answers-3070">
+    The oldest snapshot, as this references data in all other snapshots
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3071" disabled="">
+    <label class="form-check-labelx" for="answers-3071">
+    Two snapshots, the oldest and most recent snapshots
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-747">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-747" aria-expanded="true" aria-controls="collapse-747">
+    56. A company has over 2000 users and is planning to migrate data into the AWS Cloud. Some of the data is user’s home folders on an existing file share and the plan is to move this data to Amazon S3. Each user will have a folder in a shared bucket under the folder structure: bucket/home/%username%.<br>What steps should a Solutions Architect take to ensure that each user can access their own home folder and no one else’s? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-747" class="accordion-collapse collapse show" aria-labelledby="heading-747" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3072" disabled="">
+    <label class="form-check-labelx" for="answers-3072">
+    <b>Create an IAM policy that applies folder-level permissions</b>
+    <br>
+    <i>Theo cách xây dựng IAM policy của AWS:<br>- Tạo IAM policy áp dụng folder-level permissions<br>- Tạo IAM group và đính kèm IAM policy, thêm IAM users<br>Bạn có thể truy cập link dưới để xem hướng dẫn chi tiết<br>References:<br>https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3073" disabled="">
+    <label class="form-check-labelx" for="answers-3073">
+    Create an IAM policy that applies object-level S3 ACLs
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3074" disabled="">
+    <label class="form-check-labelx" for="answers-3074">
+    Create a bucket policy that applies access permissions based on username
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3075" disabled="">
+    <label class="form-check-labelx" for="answers-3075">
+    Attach an S3 ACL sub-resource that grants access based on the %username% variable
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3076" disabled="">
+    <label class="form-check-labelx" for="answers-3076">
+    <b>Create an IAM group and attach the IAM policy, add IAM users to the group</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-748">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-748" aria-expanded="true" aria-controls="collapse-748">
+    57. Encrypted Amazon Elastic Block Store (EBS) volumes are attached to some Amazon EC2 instances. Which statements are correct about using encryption with Amazon EBS volumes? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-748" class="accordion-collapse collapse show" aria-labelledby="heading-748" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3077" disabled="">
+    <label class="form-check-labelx" for="answers-3077">
+    Volumes created from encrypted snapshots are unencrypted
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3078" disabled="">
+    <label class="form-check-labelx" for="answers-3078">
+    You cannot mix encrypted with unencrypted volumes on an instance
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3079" disabled="">
+    <label class="form-check-labelx" for="answers-3079">
+    <b>Encryption is supported on all Amazon EBS volume types </b>
+    <br>
+    <i>Một số thông tin về Amazon EBS encrypted volumes và snapshots:<br>- Tất cả các loại EBS đều hỗ trợ mã hóa và tất cả các instance families đều hỗ trợ mã hóa.<br>- Không phải tất cả các instance types đều hỗ trợ mã hóa.<br>- Data in transit giữa một instance và một encrypted volume cũng được mã hóa (data is encrypted in transit).<br>- Bạn có thể đã mã hóa các unencrypted EBS volumes được gắn vào một instance cùng một lúc.<br>- Snapshots của encrypted volumes được mã hóa tự động.<br>- EBS volumes restored được khôi phục từ snapshots được mã hóa được mã hóa tự động.<br>- EBS volumes được tạo từ các snapshots được mã hóa cũng được mã hóa.<br>References:<br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3080" disabled="">
+    <label class="form-check-labelx" for="answers-3080">
+    <b>Data in transit between an instance and an encrypted volume is also encrypted</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3081" disabled="">
+    <label class="form-check-labelx" for="answers-3081">
+    Data is only encrypted at rest
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-749">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-749" aria-expanded="true" aria-controls="collapse-749">
+    58. A customer runs an application on-premise that stores large media files. The data is mounted to different servers using either the SMB or NFS protocols. The customer is having issues with scaling the storage infrastructure on-premise and is looking for a way to offload the data set into the cloud whilst retaining a local cache for frequently accessed content.<br>Which of the following is the best solution?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-749" class="accordion-collapse collapse show" aria-labelledby="heading-749" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3082" disabled="">
+    <label class="form-check-labelx" for="answers-3082">
+    Create a script that migrates infrequently used data to S3 using multi-part upload
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3083" disabled="">
+    <label class="form-check-labelx" for="answers-3083">
+    Establish a VPN and use the Elastic File System (EFS)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3084" disabled="">
+    <label class="form-check-labelx" for="answers-3084">
+    Use the AWS Storage Gateway Volume Gateway in cached volume mode
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3085" disabled="">
+    <label class="form-check-labelx" for="answers-3085">
+    <b>Use the AWS Storage Gateway File Gateway</b>
+    <br>
+    <i>File gateway cung cấp máy chủ virtual on-premises file server, cho phép bạn lưu trữ và truy xuất tệp dưới dạng đối tượn (files as objects) trong Amazon S3. Nó có thể được sử dụng cho các on-premises applications và cho các Amazon EC2-resident applications cần lưu trữ tệp trong S3 cho khối lượng công việc dựa trên đối tượng. Chỉ được sử dụng cho các tệp phẳng( flat files), được lưu trữ trực tiếp trên S3. File gateway cung cấp quyền truy cập dựa trên SMB hoặc NFS-based dữ liệu trong Amazon S3 với bộ nhớ đệm cục bộ(local caching).<br>References:<br>https://aws.amazon.com/storagegateway/file/<br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-750">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-750" aria-expanded="true" aria-controls="collapse-750">
+    59. An application regularly uploads files from an Amazon EC2 instance to an Amazon S3 bucket. The files can be a couple of gigabytes in size and sometimes the uploads are slower than desired. What method can be used to increase throughput and reduce upload times?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Storage &amp; Backup</span>
+    </div>
+    </div>
+    <div id="collapse-750" class="accordion-collapse collapse show" aria-labelledby="heading-750" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3086" disabled="">
+    <label class="form-check-labelx" for="answers-3086">
+    Upload the files using the S3 Copy SDK or REST API
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3087" disabled="">
+    <label class="form-check-labelx" for="answers-3087">
+    Randomize the object names when uploading
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3088" disabled="">
+    <label class="form-check-labelx" for="answers-3088">
+    <b>Use Amazon S3 multipart upload</b>
+    <br>
+    <i>Multipart upload có thể được sử dụng để tăng tốc tải lên S3. Multipart upload tải lên các đối tượng theo từng phần một cách độc lập, song song và theo bất kỳ thứ tự nào. Nó được thực hiện bằng cách sử dụng API tải lên S3 Multipart và được khuyến nghị cho các đối tượng có dung lượng 100MB trở lên. Nó có thể được sử dụng cho các đối tượng từ 5MB đến 5TB và phải được sử dụng cho các đối tượng lớn hơn 5GB.<br>References:<br>https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3089" disabled="">
+    <label class="form-check-labelx" for="answers-3089">
+    Turn off versioning on the destination bucket
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-751">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-751" aria-expanded="true" aria-controls="collapse-751">
+    60. A Solutions Architect is designing the system monitoring and deployment layers of a serverless application. The system monitoring layer will manage system visibility through recording logs and metrics and the deployment layer will deploy the application stack and manage workload changes through a release management process.<br> The Architect needs to select the most appropriate AWS services for these functions. Which services and frameworks should be used for the system monitoring and deployment layers? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-751" class="accordion-collapse collapse show" aria-labelledby="heading-751" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3090" disabled="">
+    <label class="form-check-labelx" for="answers-3090">
+    <b>Use AWS SAM to package, test, and deploy the serverless application stack </b>
+    <br>
+    <i>AWS Serverless Application Model (AWS SAM) là một phần mở rộng của AWS CloudFormation được sử dụng để đóng gói, kiểm tra và triển khai các serverless applications.<br>Với Amazon CloudWatch, bạn có thể truy cập số liệu hệ thống trên tất cả các dịch vụ AWS mà bạn sử dụng, hợp nhất nhật ký cấp hệ thống và ứng dụng, đồng thời tạo các chỉ số hiệu suất (KPI) dưới dạng số liệu tùy chỉnh cho các nhu cầu cụ thể của bạn.<br>References:<br>https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3091" disabled="">
+    <label class="form-check-labelx" for="answers-3091">
+    Use AWS Lambda to package, test, and deploy the serverless application stack
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3092" disabled="">
+    <label class="form-check-labelx" for="answers-3092">
+    <b>Use Amazon CloudWatch for consolidating system and application logs and monitoring custom metrics</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3093" disabled="">
+    <label class="form-check-labelx" for="answers-3093">
+    Use AWS X-Ray to package, test, and deploy the serverless application stack
+    
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3094" disabled="">
+    <label class="form-check-labelx" for="answers-3094">
+    Use AWS CloudTrail for consolidating system and application logs and monitoring custom metrics
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-752">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-752" aria-expanded="true" aria-controls="collapse-752">
+    61. A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.<br>What is the SIMPLEST method of achieving the requirements?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-752" class="accordion-collapse collapse show" aria-labelledby="heading-752" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3095" disabled="">
+    <label class="form-check-labelx" for="answers-3095">
+    <b>Create a service control policy in the root organizational unit to deny access to the services or actions</b>
+    <br>
+    <i>Service control policies (SCP) cung cấp quyền kiểm soát tập trung đối với các quyền tối đa hiện có cho tất cả các tài khoản trong tổ chức của bạn, cho phép bạn đảm bảo các tài khoản của mình luôn tuân thủ các nguyên tắc kiểm soát truy cập của tổ chức.<br>References:<br>https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3096" disabled="">
+    <label class="form-check-labelx" for="answers-3096">
+    Create an IAM policy in the root account and attach it to users and groups in each account
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3097" disabled="">
+    <label class="form-check-labelx" for="answers-3097">
+    Create a Network ACL that limits access to the services or actions and attach it to all relevant subnets
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3098" disabled="">
+    <label class="form-check-labelx" for="answers-3098">
+    Create cross-account roles in each account to limit access to the services and actions that are allowed
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-753">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-753" aria-expanded="true" aria-controls="collapse-753">
+    62. An event in CloudTrail is the record of an activity in an AWS account. What are the two types of events that can be logged in CloudTrail? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-753" class="accordion-collapse collapse show" aria-labelledby="heading-753" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3099" disabled="">
+    <label class="form-check-labelx" for="answers-3099">
+    System Events which are also known as instance level operations
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3100" disabled="">
+    <label class="form-check-labelx" for="answers-3100">
+    <b>Management Events which are also known as control plane operations</b>
+    <br>
+    <i>Trails có thể được cấu hình để ghi log Data events và management events:<br>Data events: Những sự kiện này cung cấp thông tin chi tiết về các hoạt động tài nguyên được thực hiện trên hoặc bên trong tài nguyên. Chúng còn được gọi là data plane operations<br>Management events: Sự kiện quản lý cung cấp thông tin chi tiết về các hoạt động quản lý được thực hiện trên các tài nguyên trong tài khoản AWS của bạn. Đây còn được gọi là control plane operations. Các sự kiện quản lý cũng có thể bao gồm các sự kiện không phải API xảy ra trong tài khoản của bạn<br>References:<br>https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html<br><br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3101" disabled="">
+    <label class="form-check-labelx" for="answers-3101">
+    Control Events which are also known as data plane operations
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3102" disabled="">
+    <label class="form-check-labelx" for="answers-3102">
+    <b>Data Events which are also known as data plane operations</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3103" disabled="">
+    <label class="form-check-labelx" for="answers-3103">
+    Platform Events which are also known as hardware level operations
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-754">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-754" aria-expanded="true" aria-controls="collapse-754">
+    63. A Solutions Architect regularly deploys and manages infrastructure services for customers on AWS. The SysOps team are facing challenges in tracking changes that are made to the infrastructure services and rolling back when problems occur.<br>How can a Solutions Architect BEST assist the SysOps team?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Other</span>
+    </div>
+    </div>
+    <div id="collapse-754" class="accordion-collapse collapse show" aria-labelledby="heading-754" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3104" disabled="">
+    <label class="form-check-labelx" for="answers-3104">
+    <b>Use CloudFormation templates to deploy and manage the infrastructure services</b>
+    <br>
+    <i>Khi bạn cung cấp cơ sở hạ tầng(infrastructure) của mình với AWS CloudFormation, AWS CloudFormation template mô tả chính xác những tài nguyên nào được cung cấp và cài đặt của chúng. Vì các templates này là text files, bạn chỉ cần theo dõi sự khác biệt trong các templates của mình để theo dõi các thay đổi đối với infrastructure của bạn, tương tự như cách các nhà phát triển kiểm soát các bản sửa đổi đối với mã nguồn.<br>Ví dụ: bạn có thể sử dụng version control system với các templates của mình để bạn biết chính xác những thay đổi nào đã được thực hiện, ai đã thực hiện chúng và khi nào. Nếu tại bất kỳ thời điểm nào bạn cần đảo ngược các thay đổi đối với cơ sở hạ tầng của mình, bạn có thể sử dụng templates trước đó của mình.<br>References:<br>https://aws.amazon.com/cloudformation/resources/<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3105" disabled="">
+    <label class="form-check-labelx" for="answers-3105">
+    Use AWS Systems Manager to manage all updates to the infrastructure services
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+     <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3106" disabled="">
+    <label class="form-check-labelx" for="answers-3106">
+    Use Trusted Advisor to record updates made to the infrastructure services
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3107" disabled="">
+    <label class="form-check-labelx" for="answers-3107">
+    Use CodeDeploy to manage version control for the infrastructure services
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-755">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-755" aria-expanded="true" aria-controls="collapse-755">
+    64. A Solutions Architect is designing a migration strategy for a company moving to the AWS Cloud. The company use a shared Microsoft filesystem that uses Distributed File System Namespaces (DFSN). What will be the MOST suitable migration strategy for the filesystem?<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Migration</span>
+    </div>
+    </div>
+    <div id="collapse-755" class="accordion-collapse collapse show" aria-labelledby="heading-755" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3108" disabled="">
+    <label class="form-check-labelx" for="answers-3108">
+    Use the AWS Server Migration Service to migrate to an Amazon S3 bucket
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3109" disabled="">
+    <label class="form-check-labelx" for="answers-3109">
+    Use the AWS Server Migration Service to migrate to Amazon FSx for Lustre
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3110" disabled="">
+    <label class="form-check-labelx" for="answers-3110">
+    Use AWS DataSync to migrate to an Amazon EFS filesystem
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-3111" disabled="">
+    <label class="form-check-labelx" for="answers-3111">
+    <b>Use AWS DataSync to migrate to Amazon FSx for Windows File Server</b>
+    <br>
+    <i>Hệ thống tệp đích phải là Amazon FSx cho Máy chủ tệp Windows. Điều này hỗ trợ DFSN và là giải pháp lưu trữ phù hợp nhất cho các hệ thống tệp của Microsoft. AWS DataSync hỗ trợ di chuyển sang Amazon FSx và tự động hóa quy trình.<br>References:<br>https://aws.amazon.com/blogs/storage/migrate-to-amazon-fsx-for-windows-file-server-using-aws-datasync/<br>https://docs.aws.amazon.com/fsx/latest/WindowsGuide/migrate-files-fsx.html<br><br></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-756">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-756" aria-expanded="true" aria-controls="collapse-756">
+    65. A Solutions Architect needs to migrate an Oracle database running on RDS onto Amazon RedShift to improve performance and reduce cost. Which combination of tasks using AWS services should be used to execute the migration? (choose 2)<br>
+    <span class="btn btn-sm btn-warning float-end mb-1">Migration</span>
+    </div>
+    </div>
+    <div id="collapse-756" class="accordion-collapse collapse show" aria-labelledby="heading-756" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3112" disabled="">
+    <label class="form-check-labelx" for="answers-3112">
+    Configure API Gateway to extract, transform and load the data into RedShift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3113" disabled="">
+    <label class="form-check-labelx" for="answers-3113">
+    <b>Migrate the database using the AWS Database Migration Service (DMS)</b>
+    <br>
+    <i>Chuyển đổi data warehouse schema và code từ cơ sở dữ liệu Oracle chạy trên RDS bằng AWS Schema Conversion Tool (AWS SCT), sau đó migrate dữ liệu từ cơ sở dữ liệu Oracle sang Amazon Redshift bằng AWS Database Migration Service (AWS DMS)<br>References:<br>https://aws.amazon.com/getting-started/projects/migrate-oracle-to-amazon-redshift/<br><br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3114" disabled="">
+    <label class="form-check-labelx" for="answers-3114">
+    Enable log shipping from the Oracle database to RedShift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3115" disabled="">
+    <label class="form-check-labelx" for="answers-3115">
+    Take a snapshot of the Oracle database and restore the snapshot onto RedShift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-3116" disabled="">
+    <label class="form-check-labelx" for="answers-3116">
+    <b>Convert the schema using the AWS Schema Conversion Tool </b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022Storage \\u0026 Backup\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:1,\u0022category_id\u0022:5},\u0022Security\u0022:{\u0022correct\u0022:2,\u0022incorrect\u0022:1,\u0022category_id\u0022:6},\u0022Database\u0022:{\u0022correct\u0022:1,\u0022incorrect\u0022:0,\u0022category_id\u0022:9},\u0022Computing\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:1,\u0022category_id\u0022:4},\u0022Other\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:2,\u0022category_id\u0022:8},\u0022Cost Optimize\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:1,\u0022category_id\u0022:1}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>

@@ -1,0 +1,782 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="FWf7blIjxvWJG3jSVF3v40Uh0zYbWSqivygQaTit"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-05-29 11:48:24" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA Chương 1" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lại" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="9.0833333333333" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Trượt" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="4/5" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3025">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3025" aria-expanded="true" aria-controls="collapse-3025">
+    1. Which of the following default settings are incorrect for a newly created S3 bucket? (choose 2 options)<br><br>
+    </div>
+    </div>
+    <div id="collapse-3025" class="accordion-collapse collapse show" aria-labelledby="heading-3025" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4926" disabled="">
+    <label class="form-check-labelx" for="answers-4926">
+    Encryption is not enabled.
+    <br>
+    <i>Ở trạng thái mặc định, encryption không được bật. Câu hỏi đang hỏi những setting nào là "không chính xác", do vậy đây không phải là đáp án.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4927" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4927">
+    <b>Transfer Acceleration is enabled.</b>
+    <br>
+    <i>Ở trạng thái mặc định, Transfer Acceleration sẽ được disabled, do đó đây là phương án cần lựa chọn.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4928" disabled="">
+    <label class="form-check-labelx" for="answers-4928">
+    No bucket policy exists.
+    <br>
+    <i>Quả thực bucket policy không tồn tại với thiết lập default. Chúng ta có thể giới hạn bucket access thông qua bucket policy.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4929" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4929">
+    <b>Versioning is enabled.</b>
+    <br>
+    <i>Theo mặc định, Version sẽ được disabled. Do đó điều này là không chính xác.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3026">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3026" aria-expanded="true" aria-controls="collapse-3026">
+    2. Which of the following are S3 bucket properties?(Choose 2 options)
+    </div>
+    </div>
+    <div id="collapse-3026" class="accordion-collapse collapse show" aria-labelledby="heading-3026" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4930" disabled="">
+    <label class="form-check-labelx" for="answers-4930">
+    <b>Server access logging</b>
+    <br>
+    <i>Đây là 1 thuộc tính của S3 bucket. Do vậy đây là đáp án chính xác.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4931" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4931">
+    <b>Object level logging
+    </b>
+    <br>
+    <i>Object level logging là thuộc tính nằm ở cấp bucket, sẽ có tác động tới cả bucket. Do đó, đây là đáp án chính xác.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4932" disabled="">
+    <label class="form-check-labelx" for="answers-4932">
+    Storage class
+    <br>
+     <i>Thuộc tính này nằm ở cấp object (có tác động tới từng object), không phải cấp bucket, nên đây không phải đáp án chính xác.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4933" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4933">
+    Metadata
+    <br>
+    <i>Metadata là thuộc tính cấp object, không phải cấp bucket. Do đó không phải đáp án chính xác.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3027">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3027" aria-expanded="true" aria-controls="collapse-3027">
+    3. <br>You have created an S3 bucket in us-east-1 region with default configuration. You are located in Asia and deleted an object in the bucket using AWS CLI. However, when you tried to list the objects in the bucket, you still see the object you deleted. You are even able to download the object. What could have caused this behaviour?
+    </div>
+    </div>
+    <div id="collapse-3027" class="accordion-collapse collapse show" aria-labelledby="heading-3027" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4934" disabled="">
+    <label class="form-check-labelx" for="answers-4934">
+    Cross region deletes are not supported by AWS
+    <br>
+    <i>Có thể thực hiện hành động DELETE từ Console, CLI, chương trình từ bất kỳ region nào miễn là có đủ quyền thực thi hành động đó.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4935" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4935">
+    <b>AWS provides eventual consistency for DELETES.</b>
+    <br>
+    <i>Amazon S3 cung cấp tính nhất quán bất nhất (eventual consistency) cho các hoạt động PUTS và DELETES trên tất cả regions.<br>Eventual consistency sẽ làm dữ liệu giữa các regions có 1 độ trễ trước khi được đồng nhất giống nhau. Do đó đây có thể là lý do chúng ta nhìn thấy kết quả như đã nêu.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4936" disabled="">
+    <label class="form-check-labelx" for="answers-4936">
+    AWS keeps copy of deleted object for 7 days in STANDARD storage.
+    <br>
+    <i>AWS S3 sẽ xóa bất kỳ object nào nếu nhận được yêu cầu DELETE từ 1 thực thể IAM đã được xác thực.<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4937" disabled="">
+    <label class="form-check-labelx" for="answers-4937">
+    AWS provides strong consistency for DELETES.
+    <br>
+    <i>AWS không cung cấp strong consistency cho hoạt động DELETES.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3028">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3028" aria-expanded="true" aria-controls="collapse-3028">
+    4. Your organization is planning to upload large number of files to AWS cloud. These files need to be immediately available for download across different geographical regions right after the upload is complete. They consulted you to check if S3 is a suitable solution for the use case. What do you suggest?
+    </div>
+    </div>
+    <div id="collapse-3028" class="accordion-collapse collapse show" aria-labelledby="heading-3028" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4938" disabled="">
+    <label class="form-check-labelx" for="answers-4938">
+    S3 is not suitable for immediate downloads because new AWS provides eventual consistency for new objects.
+    <br>
+    <i>Đáp án này không chính xác. Eventual consistency chỉ có tác động đối với hoạt động PUTS ghi đè và hoạt động DELETE.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4939" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4939">
+    <b>S3 is suitable for immediate downloads because AWS provides read-after-write consistency for new objects.
+    </b>
+    <br>
+    <i>Amazon S3 cung cấp read-after-write consistency cho hoạt động PUTS objects mới trong S3 bucket trên tất cả regions với 1 lưu ý. Lưu ý đó là nếu đã tạo 1 HEAD hoặc GET request tới key name (để kiểm tra object có tồn tại không) trước khi object được tạo ra, Amazon S3 sẽ cung cấp eventual consistency thay cho read-after-write consistency. Điều này có nghĩa nếu bạn fetch 1 object mới, bạn sẽ luôn nhận được object mới. Nếu bạn thay thế bằng 1 object khác, xóa object hoặc làm bất kỳ hành động nào khác, thì có khả năng bạn sẽ vẫn có thể nhận được object cũ.<br><br><img src="https://whizlabs.com/learn/media/2019/01/22/questions_i4r4hd.png"><br><br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4940" disabled="">
+    <label class="form-check-labelx" for="answers-4940">
+    EFS is suitable for immediate downloads because AWS provides eventual consistency for new objects.
+    <br>
+    <i>Không chính xác, EFS cung cấp read-after-write consistency.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4941" disabled="">
+    <label class="form-check-labelx" for="answers-4941">
+    S3 is suitable for immediate downloads because AWS provides strong consistency for new objects.
+    <br>
+    <i>AWS cung cấp strong consistency cho DynamoDB, không phải S3.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3029">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3029" aria-expanded="true" aria-controls="collapse-3029">
+    5. You are a solutions architect. Your organization is building an application on premise. But would like to keep the storage on AWS. Objects/files must only be accessed via the application as there are relational and access related logics built in the application. But, as an exception, Administrators should be able to access the objects/files directly from AWS S3 console/API bypassing the application. What solution would you provide?
+    </div>
+    </div>
+    <div id="collapse-3029" class="accordion-collapse collapse show" aria-labelledby="heading-3029" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4942" disabled="">
+    <label class="form-check-labelx" for="answers-4942">
+    Cached Volume Gateway
+    <br>
+    <i><br>Với Cached Volumen Gateway, có thể lưu trữ dữ liệu trong Amazon S3 và giữ lại trên local 1 bản copy của tập con các dữ liệu được truy xuất thường xuyên. Có thể sử dụng incremental backups, được gọi là snapshots của storage volume trên S3. Tất cả gateway data và snapshot data cho cached volumes được lưu trữ trên Amazon S3 và sẽ được encrpte trong lúc nghỉ sử dụng server-side encryption (SSE). Tuy nhiên, bạn sẽ không thể truy xuất dữ liệu này với S3 API hoặc các tool khác như Amazon S3 Management Console.<br> </i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4943" disabled="">
+    <label class="form-check-labelx" for="answers-4943">
+    Stored Volume Gateway
+    <br>
+    <i>Với stored volumes, bạn sẽ lưu trữ toàn bộ các volume data on-premises và lưu trữ backup định kỳ theo thời gian (snapshots) trên AWS. Trong model này, on-premises storage là storage chính, cung cấp truy xuất low-latency tới toàn bộ dataset. AWS storage là backup mà chúng ta có thể khôi phục trong trường hợp có thảm họa xảy ra với data center.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4944" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-4944">
+    <b>File Gateway
+    </b>
+    <br>
+    <i>Answer: C<br><br>The File Gateway đại diện 1 file interface cho phép lưu trữ files dưới dạng objects trong Amazon S3 sử dụng chuẩn công nghệ NFS và SMB file protocols, và truy cập những file này thông qua NFS và SMB từ datacenter hoặc Amazon EC2, hoặc cũng có thể truy cập những file này dưới dạng objects với S3 API.<br><img src="https://whizlabs.com/learn/media/2019/01/22/questions_egzzbb.png"></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4945" disabled="">
+    <label class="form-check-labelx" for="answers-4945">
+    Custom built solution using S3
+    <br>
+    <i>Dù là lựa chọn này có thể hoạt động, tuy nhiênkhông khuyến khích làm như vậy.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3030">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3030" aria-expanded="true" aria-controls="collapse-3030">
+    6. You have created an S3 bucket in us-east-1 region with default configurations. You have uploaded few documents and need to be shared with a group within the organization granting them access for a limited time. What is the recommended approach?
+    </div>
+    </div>
+    <div id="collapse-3030" class="accordion-collapse collapse show" aria-labelledby="heading-3030" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4946" disabled="">
+    <label class="form-check-labelx" for="answers-4946">
+    Create one IAM user per person, attach managed policy for each user with GetObject action on your S3 bucket. Users can login to AWS console and download documents.
+    <br>
+    <i>Dù thiết lập như này có thể hoạt động, tuy nhiên việc thiết lập để cho phép download tài liệu sẽ mất rất nhiều công sức. Thêm nữa, AWS khuyến cáo sử dụng credentials tạm thời cho use cases mà users cần truy xuất tài nguyên AWS.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4947" disabled="">
+    <label class="form-check-labelx" for="answers-4947">
+    Create one IAM user per person, add them to an IAM group, attach managed policy for the group with GetObject action on your S3 bucket. Users can log in to AWS console and download documents.
+    <br>
+    <i>Dù thiết lập như này có thể hoạt động, tuy nhiên việc thiết lập để cho phép download tài liệu sẽ mất rất nhiều công sức. Thêm nữa, AWS khuyến cáo sử dụng credentials tạm thời cho use cases mà users cần truy xuất tài nguyên AWS.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4948" disabled="">
+    <label class="form-check-labelx" for="answers-4948">
+    <b>Generate pre-signed URL with an expiry date and share the URL with all persons via email.
+    </b>
+    <br>
+    <i>Mọi objects mặc định sẽ ở chế độ private. Chỉ object owner mới có quyền truy cập những objects này. Tuy nhiên, object owner có thể share objects cho những người khác bằng cách tạo 1 pre-signed URL, sử dụng security credentials cua chính mình, cấp quyền trong 1 thời gian nhất định để download objects.<br><br>Bất kỳ ai nhận được pre-signed URL có thể truy cập object. Ví dụ, nếu có 1 video trên bucket và cả bucket và object đều ở chế độ private, thì có thể share video cho người khác thông qua việc tạo một pre-signed URL.Sau khi hết thời gian giới hạn, sử dụng URL này sẽ không thể truy cập được object nữa.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4949" disabled="">
+    <label class="form-check-labelx" for="answers-4949">
+    By default, S3 bucket has public access enabled. Share the document URLs with all persons via email.
+    <br>
+    <i><br>Tất cả objects trên S3 bucket đều ở chế độ private theo mặc định.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3031">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3031" aria-expanded="true" aria-controls="collapse-3031">
+    7. You have created an AWS Lambda function that will write data to a DynamoDB table. Which of the following must be in place to ensure that the Lambda function can interact with the DynamoDB table?
+    </div>
+    </div>
+    <div id="collapse-3031" class="accordion-collapse collapse show" aria-labelledby="heading-3031" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4950" disabled="">
+    <label class="form-check-labelx" for="answers-4950">
+    <b>Ensure an IAM Role is attached to the Lambda function which has the required DynamoDB privileges.</b>
+    <br>
+    <i>Answer – A<br><br>AWS Documentation mentions the following to support this requirement:<br><br>Mỗi Lambda function có 1 IAM role (execution role) liên kết. Khi khởi tạo Lambda function cần chỉ định IAM role. Quyền gán cho role này sẽ quyết định Lambda có thể làm gì. Có 2 loại permissions có thể gán cho IAM role:<br> Nếu Lambda function code truy cập tới các AWS resources khác, như đọc object từ S3 bucket hoặc viết log lên CloudWatch Log, chúng ta sẽ cần cấp quyền liên quan tới hoạt động Amazon S3 và CloudWatch tới role đó.<br> Nếu nguồn sự kiện là stream-based (Amazon Kinesis Data Streams and DynamoDB streams), AWS Lambda sẽ thăm dò (poll) những streams này. AWS Lambda cần permissions để poll stream vầ đọc record mới trên stream do đó chúng ta sẽ cần cấp quyền liên quan cho role này.. <br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4951" disabled="">
+    <label class="form-check-labelx" for="answers-4951">
+    Ensure an IAM User is attached to the Lambda function which has the required DynamoDB privileges.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4952" disabled="">
+    <label class="form-check-labelx" for="answers-4952">
+    Ensure the Access keys are embedded in the AWS Lambda function.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4953" disabled="">
+    <label class="form-check-labelx" for="answers-4953">
+    Ensure the IAM user password is embedded in the AWS Lambda function.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3032">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3032" aria-expanded="true" aria-controls="collapse-3032">
+    8. A company has an Amazon Aurora cluster setup. They have setup a Lambda function which needs to insert records into a DynamoDB table. The Amazon Aurora cluster needs to invoke the Lambda as a stored procedure. Which of the following need to be in place for this setup to work. Choose 2 answers from the options given below
+    </div>
+    </div>
+    <div id="collapse-3032" class="accordion-collapse collapse show" aria-labelledby="heading-3032" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4954" disabled="">
+    <label class="form-check-labelx" for="answers-4954">
+    Ensure that the Lambda function has an IAM Role assigned to it which can be used to invoke functions on Amazon Aurora
+    <br>
+    <i>Đáp án không chính xác vì sẽ cần thiết lập ngược lại.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4955" disabled="">
+    <label class="form-check-labelx" for="answers-4955">
+    <b>Ensure that the Amazon Aurora cluster has an IAM Role which allows it to invoke Lambda functions
+    </b>
+    <br>
+    <i>Answer – B and D<br><br>Snapshot bên dưới từ AWS Documentation cho thấy những bước cần thiết để đảm bảo Lambda function có thể truy cập vào Aurora.<br><img src="https://whizlabs.com/learn/media/2019/01/22/questions_vbs8l1.png"><br><br><br>For more information on integrating AWS Lambda with Aurora, please refer to the below URL<br><br>https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Integrating.Lambda.html</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4956" disabled="">
+    <label class="form-check-labelx" for="answers-4956">
+    Allow the Lambda function to allow outbound communication to Amazon Aurora
+    <br>
+    <i>Đáp án không chính xác vì sẽ cần thiết lập ngược lại.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-4957" disabled="">
+    <label class="form-check-labelx" for="answers-4957">
+    <b>Allow the Amazon Aurora cluster to allow outbound communication to the Lambda function
+    </b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3033">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3033" aria-expanded="true" aria-controls="collapse-3033">
+    9. An EC2 Instance hosts a Java-based application that accesses a DynamoDB table. This EC2 Instance is currently serving production users. What would be a secure way for the EC2 Instance to access the DynamoDB table?
+    </div>
+    </div>
+    <div id="collapse-3033" class="accordion-collapse collapse show" aria-labelledby="heading-3033" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4958" disabled="">
+    <label class="form-check-labelx" for="answers-4958">
+    <b>Use IAM Roles with permissions to interact with DynamoDB and assign it to the EC2 Instance.
+    </b>
+    <br>
+    <i>Để đảm bào truy cập an toàn tới AWS resource từ EC2 instances, luôn phải gán 1 role cho EC2 instance.<br>Một IAM role sẽ tương đương với 1 user, nó là 1 định danh AWS identity với các permission policies quy định identity có thể và không thể làm gì trên AWS. Tuy nhiên, thay vì được liên kết duy nhất với 1 người, role được sử dụng bởi bất kỳ người nào cần. Thêm nữa, 1 IAM role cũng không có credentials chuẩn dài hạn (password hay access key) liên kết với nó. Thay vào đó, nếu 1 user sử dụng 1 role, thì những credentials bảo mật sẽ được tạo ra tạm thời và cung cấp cho user.<br><br>Có thể sử dụng roles để cấp phát quyền truy cập cho người dùng, applications, hoặc services mà thông thường không có quyền truy cập tới AWS resource.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4959" disabled="">
+    <label class="form-check-labelx" for="answers-4959">
+    Use KMS Keys with the right permissions to interact with DynamoDB and assign it to the EC2 Instance.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4960" disabled="">
+    <label class="form-check-labelx" for="answers-4960">
+    Use IAM Access Keys with the right permissions to interact with DynamoDB and assign it to the EC2 Instance.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4961" disabled="">
+    <label class="form-check-labelx" for="answers-4961">
+    Use IAM Access Groups with the right permissions to interact with DynamoDB and assign it to the EC2 Instance.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3034">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3034" aria-expanded="true" aria-controls="collapse-3034">
+    10. You are deploying an application on Amazon EC2 that must call AWS APIs. Which method would you use to securely pass the credentials to the application?
+    </div>
+    </div>
+    <div id="collapse-3034" class="accordion-collapse collapse show" aria-labelledby="heading-3034" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4962" disabled="">
+    <label class="form-check-labelx" for="answers-4962">
+    Pass API credentials to the instance using Instance userdata.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4963" disabled="">
+    <label class="form-check-labelx" for="answers-4963">
+    Store API credentials as an object in Amazon S3.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4964" disabled="">
+    <label class="form-check-labelx" for="answers-4964">
+    Embed the API credentials into your application.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-4965" disabled="">
+    <label class="form-check-labelx" for="answers-4965">
+    <b>Assign IAM roles to the EC2 Instances.
+    </b>
+    <br>
+    <i><br>Có thể sử dụng roles để cung cấp quyền truy cập tới user, applications, hay services mà không có quyền truy cập thường xuyên tới AWS resources. Sử dụng IAM credentials cho app production không phải là best practice, mà nên sử dụng IAM Roles.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022undefined\u0022:{\u0022correct\u0022:1,\u0022incorrect\u0022:0,\u0022category_id\u0022:null}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>

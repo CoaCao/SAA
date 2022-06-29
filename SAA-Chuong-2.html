@@ -1,0 +1,810 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="YpJnYNtReBXJ8XikCJ8083wcNFnXXSElkTU2ZmoS"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+    Nộp thành công
+    </div>
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-05-29 14:45:22" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA Chương 2" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lần đầu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="16.333333333333" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Trượt" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="3/10" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3054">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3054" aria-expanded="true" aria-controls="collapse-3054">
+    1. Which of the following statements are correct with respect to instance store and EBS volume? Please select 2 correct options.<br><br>
+    </div>
+    </div>
+    <div id="collapse-3054" class="accordion-collapse collapse show" aria-labelledby="heading-3054" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5008" disabled="">
+    <label class="form-check-labelx" for="answers-5008">
+    Instance store backed EC2 instances will persist storage across instance stop, terminate and failures.
+    <br>
+    <i>Không chính xác. Dữ liệu trong instance store sẽ được lưu trữ trong khoảng thời gian nó được liên kết tới instance. Nếu reboot thì dữ liệu sẽ còn lưu lại. Tuy nhiên dữ liệu sẽ biến mất nếu: như ổ đĩa bị lỗi, dừng instance, hoặc tắt instance.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5009" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5009">
+    <b>EBS backed EC2 instances can persist storage across instance stop, terminate and failures.
+    </b>
+    <br>
+    <i>EBS là bộ lưu trữ nằm ngoài EC2, không phụ thuộc vào EC2 dừng hay tắt. Chi phí phải trả sẽ phụ thuộc vào thời gian lưu trữ dữ liệu. Do đó, đây là đáp án chính xác. (Phát biểu đúng về Instance Store và EBS)</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5010" disabled="">
+    <label class="form-check-labelx" for="answers-5010">
+    Instance store backed EC2 instance will persist storage only during instance stop and start.
+    <br>
+    <i>Không chính xác. Dữ liệu trong instance store sẽ được lưu lại chỉ trong trường hợp khởi động lại ngay lập tức (dù cố ý hay vô tình) =&gt; reboot. Khi dừng instance thì dẽ liệu đã bị mất nên kể cả có khởi động lại thì dữ liệu cũng không còn.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5011" disabled="">
+    <label class="form-check-labelx" for="answers-5011">
+    <b>You cannot add instance store volumes once EC2 instance is launched.
+    </b>
+    <br>
+    <i>Chính xác, đây là 1 hạn chế của instance store đã được nhắc tới trong tài liệu của AWS.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5012" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5012">
+    All available EC2 instance types support instance store and EBS volumes.
+    <br>
+    <i>Không chính xác. chỉ một số loại EC2 instance type mới support instance store và EBS volume.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3055">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3055" aria-expanded="true" aria-controls="collapse-3055">
+    2. Your organization is planning to build a BigData project on AWS. They need high data transfer rates for huge workloads to stream through with better performance. They are also looking for a solution which is cost effective. Which EBS storage type would you choose in this scenario?
+    </div>
+    </div>
+    <div id="collapse-3055" class="accordion-collapse collapse show" aria-labelledby="heading-3055" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5013" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5013">
+    General Purpose SSD
+     <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5014" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5014">
+    <b>Provisioned IOPS SSD
+    </b>
+    <br>
+    <i>Đây là loại storage phù hợp nhất cho những tác vụ nặng và cần tính toán nhiều.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5015" disabled="">
+    <label class="form-check-labelx" for="answers-5015">
+    <b>Throughput Optimized HDD
+    </b>
+    <br>
+    <i>Phù hợp usecase bigdata. Key word: Big data project, high data transfer, better performance, cost effective.<br>Tìm kiếm EBS phù hợp với kịch bản</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5016" disabled="">
+    <label class="form-check-labelx" for="answers-5016">
+    Cold HDD
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3056">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3056" aria-expanded="true" aria-controls="collapse-3056">
+    3. You are working for a data management company which uses AWS platform to manage the data for various customers. They are using AWS EBS backed EC2 instance with “Delete EBS volume on termination” checked. EC2 instances are used to run data streaming application which generates logs and are stored on EBS volumes. The log files are critical for auditing purposes. How would you protect the data stored on EBS volumes from accidental terminations of EC2 instances?
+    </div>
+    </div>
+    <div id="collapse-3056" class="accordion-collapse collapse show" aria-labelledby="heading-3056" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5017" disabled="">
+    <label class="form-check-labelx" for="answers-5017">
+    Every EBS volume will have a daily EBS snapshot created automatically by AWS.
+    <br>
+    <i>K có chuyện tự động tạo daily snapshot, mình cần phải tạo</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5018" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5018">
+    <b>Setup a Data LifeCycle Manager policy scheduler to create EBS snapshots for your EBS volumes.
+    </b>
+    <br>
+    <i>EBS sẽ bị xóa khi EC2 ngắt và không thể khôi phục lại dữ liệu được. Tuy nhiên chúng ta có thể tạo một Data LifeCycle Manager policy scheduler để lưu trữ lại dữ liệu log theo yêu cầu của câu hỏi.snapshot không tự động được tạo nếu chưa được thiết lập.<br>1 option khác là có thể sử dụng AWS Backup</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5019" disabled="">
+    <label class="form-check-labelx" for="answers-5019">
+    When EC2 instance is terminated, it automatically creates a snapshot of EBS volume and then deletes the EBS volume.
+    <br>
+    <i>Khi EC2 terminate thì không tự động tạo snapshot</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5020" disabled="">
+    <label class="form-check-labelx" for="answers-5020">
+    Write a custom script on your EC2 instance and schedule it to back up the data onto AWS S3.
+    <br>
+    <i>Việc này có thể phần nào giải quyết yêu cầu của câu hỏi, tuy nhiên việc này sẽ rất mất thời gian và không hiệu quả. k phải case tốt</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3057">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3057" aria-expanded="true" aria-controls="collapse-3057">
+    4. Which of the following is an action you cannot perform on an EBS snapshot?<br><br>
+    </div>
+    </div>
+    <div id="collapse-3057" class="accordion-collapse collapse show" aria-labelledby="heading-3057" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5021" disabled="">
+    <label class="form-check-labelx" for="answers-5021">
+    Create Image from snapshot.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5022" disabled="">
+    <label class="form-check-labelx" for="answers-5022">
+    Create EBS volume from snapshot.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5023" disabled="">
+    <label class="form-check-labelx" for="answers-5023">
+    Share a snapshot with another AWS account.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5024" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5024">
+    <b>Make unencrypted copy of an encrypted snapshot.
+    </b>
+    <br>
+    <i>Đây là đáp án chính xác. Chúng ta không thể tạo bản copy unencrypted từ 1 snapshot encrypted. Key: action, cannot, EBS</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3058">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3058" aria-expanded="true" aria-controls="collapse-3058">
+    5. You are working as an AWS architect in your organization. An application is being developed on AWS EC2 instance and would need a local volume with low latency to handle database workloads. They figured out Provisioned IOPS SSD volume type suits best. However, when the application team is launching an EC2 instance, they found an option named “EBS-optimized”. They reached out to you asking the purpose of EBS optimized instances. What do you suggest?
+    </div>
+    </div>
+    <div id="collapse-3058" class="accordion-collapse collapse show" aria-labelledby="heading-3058" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5025" disabled="">
+    <label class="form-check-labelx" for="answers-5025">
+    <b>Amazon EBS–optimized instance provides additional, dedicated capacity for Amazon EBS I/O.
+    </b>
+    <br>
+    <i>Đây là khái niệm của EBS-optimized<br>Amazon EBS–optimized instance sử dụng những thiết lập đã được tối ưu và cung cấp dung lượng bổ sung, chuyên dụng cho Amazon EBS I/O. Những tối ưu này sẽ cho ra hiệu suất tốt nhất trên EBS volumes bằng cách giảm thiểu tranh chấp giữa Amazon EBS I/O và các đường truyền khác từ instance.<br><br>EBS–optimized instances cung cấp bandwidth chuyên dụng tới Amazon EBS, nằm trong khoảng 425 Mbps and 14,000 Mbps, phụ thuộc vào instance type đang được sử dụng.<br><br>=&gt; là 1 option khi lauch EC2</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5026" disabled="">
+    <label class="form-check-labelx" for="answers-5026">
+    Amazon EBS-optimized instance comes with instance store ephemeral storage which provides faster throughput.
+    <br>
+    <i>đọc giống instance store hơn</i>
+    </label>
+    </div>
+    </div>
+     <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5027" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5027">
+    EBS-optimized is a configuration on the EBS volume, not an option on EC2 instance.
+    <br>
+    <i>EBS-optimize là cấu hình trên EC2</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5028" disabled="">
+    <label class="form-check-labelx" for="answers-5028">
+    Amazon EBS-optimized instances cannot have Provisioned IOPS SSD volume types. They only work with General Purpose SSD, Throughput optimized HDD, Cold HDD
+    <br>
+    <i>Tất cả storage type đều có</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3059">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3059" aria-expanded="true" aria-controls="collapse-3059">
+    6. Which of the following is not true with respect to EBS volume encryption?<br><br>
+    </div>
+    </div>
+    <div id="collapse-3059" class="accordion-collapse collapse show" aria-labelledby="heading-3059" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5029" disabled="">
+    <label class="form-check-labelx" for="answers-5029">
+    Encrypts data at rest inside the volume.
+    <br>
+    <i>encrypt at rest được</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5030" disabled="">
+    <label class="form-check-labelx" for="answers-5030">
+    Encrypts all data moving between the volume and the instance.
+    <br>
+    <i>ở đây hiểu là có thể attach các volume cho ec2</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5031" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5031">
+    Encrypts all snapshots created from the volume.
+    <br>
+    <i>Khi enable encrypt thì các snapshot khi tạo sẽ là encrypt.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5032" disabled="">
+    <label class="form-check-labelx" for="answers-5032">
+    <b>Encrypted EBS volumes are supported on all instance types.
+    </b>
+    <br>
+    <i>Khi bật chế độ encryption, thì chúng ta chỉ có thể launch EC2 instance có support EBS encryption.<br>Hiện hỗ trợ encrypt tất cả các EBS, nhưng chỉ hỗ trợ đa số instance type (k phải tất cả, không support 1 số phiên bản cũ ví dụ m3). <br>https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3060">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3060" aria-expanded="true" aria-controls="collapse-3060">
+    7. Which of the following statements is true with respect to encryption?<br><br>
+    </div>
+    </div>
+    <div id="collapse-3060" class="accordion-collapse collapse show" aria-labelledby="heading-3060" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5033" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5033">
+    You can enable encryption when creating a snapshot from unencrypted volume.
+    <br>
+    <i>bị disable r k encrypt được</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5034" disabled="">
+    <label class="form-check-labelx" for="answers-5034">
+    <b>You can enable encryption while copying snapshot from an unencrypted snapshot.
+    </b>
+    <br>
+    <i>Điều này là chính xác và đã được ghi lại trong Document của Amazon. Cái này phải nhớ thôi</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5035" disabled="">
+    <label class="form-check-labelx" for="answers-5035">
+    You can disable encryption while creating a snapshot from encrypted volume.
+    <br>
+    <i>Không thể disable encryption khi đang tạo</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5036" disabled="">
+    <label class="form-check-labelx" for="answers-5036">
+    You can disable encryption while copying snapshot from an encrypted snapshot.
+    <br>
+    <i>Nói chung không thể disable được encryption. Mà phải tạo 1 instance mới và làm trick (https://aws.amazon.com/premiumsupport/knowledge-center/create-unencrypted-volume-cmk/)</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3061">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3061" aria-expanded="true" aria-controls="collapse-3061">
+    8. You are working as an architect in your organization. An application team is using EBS volume for their database workloads which would need a high throughput, low latency and maximum I/O. They chose Provisioned IOPS EBS volume for better performance. However, after setting up the entire application, they notice the performance is not up to the mark. Which performance tuning mechanisms would you suggest? Please choose 3 correct options.
+    </div>
+    </div>
+    <div id="collapse-3061" class="accordion-collapse collapse show" aria-labelledby="heading-3061" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5037" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5037">
+    <b>Use EBS-Optimized Instances.
+    </b>
+    <br>
+    <i>Sử dụng EBS-Optimized Instances sẽ giúp hiệu suất đạt mức tối ưu và phù hợp cho nhiều trường hợp khác nhau.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5038" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5038">
+    Use Throughput optimized HDD volume types for low latency and maximum I/O.
+    <br>
+    <i>Không chính xác. Provisioned IOPS SSD volume sẽ phù hợp hơn cho database workloads.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5039" disabled="">
+    <label class="form-check-labelx" for="answers-5039">
+    <b>Use a Modern Linux Kernel.
+    </b>
+    <br>
+    <i>Amazon khuyến cáo sử dụng Kernel mới nhất.<br></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5040" disabled="">
+    <label class="form-check-labelx" for="answers-5040">
+    <b>Use RAID 0 to Maximize Utilization of Instance Resources.
+    </b>
+    <br>
+    <i>Một vài loại instance có thể điều khiển thông lượng I/O nhiều hơn những gì chúng ta có thể quản lý trên 1 volume EBS. Để làm được điều này, chúng ta có thể join nhiều volume gp2, io1, st2, sc1 vào thiết lập RAID 0.</i>
+    </label>
+     </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5041" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5041">
+    Performance of Provisioned IOPS SSD volume increase with volume size. Increase EBS volume size.
+    <br>
+    <i>Câu này không chính xác. Đối với General Purpose SSD thì có thể làm thế này, tuy nhiên với Provisioned IOPS SSD thì không</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3062">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3062" aria-expanded="true" aria-controls="collapse-3062">
+    9. Which of the following is not an AWS CloudWatch metric for EBS Volumes?<br><br>
+    </div>
+    </div>
+    <div id="collapse-3062" class="accordion-collapse collapse show" aria-labelledby="heading-3062" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5042" disabled="">
+    <label class="form-check-labelx" for="answers-5042">
+    VolumeReadBytes
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5043" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5043">
+    VolumeWriteOps
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5044" disabled="">
+    <label class="form-check-labelx" for="answers-5044">
+    VolumeThroughputPercentage
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5045" disabled="">
+    <label class="form-check-labelx" for="answers-5045">
+    <b>VolumeRemainingSize
+    </b>
+    <br>
+    <i>Đây không phải là metric cho EBS Volume.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3063">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3063" aria-expanded="true" aria-controls="collapse-3063">
+    10. You are using AWS EC2 linux instance for log processing which would require high throughput. You chose Throughput optimized HDD storage with 500 GB in size. You deployed your application to production mode and it is running as expected. After a month, you see an increase in log files and you are fast approaching the 500 GB size and running out of space on the EBS volume. Which of the following is a best approach to mitigate the situation with minimal configuration?
+    </div>
+    </div>
+    <div id="collapse-3063" class="accordion-collapse collapse show" aria-labelledby="heading-3063" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5046" disabled="">
+    <label class="form-check-labelx" for="answers-5046">
+    Add a new EBS volume, mount on EC2 instance and configure your application accordingly.
+    <br>
+    <i>Đây không phải phương án tối nhất, vì chúng ta sẽ cần thiết lập rất nhiều cài đặt thêm mà yêu cầu của câu hỏi là tối thiểu hóa việc thiết lập.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5047" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5047">
+    <b>Increase the size of the existing EBS volume.
+    </b>
+    <br>
+    <i>Có thể chỉnh sửa volume và tăng kích cỡ volume mà không cần phải thiết lập thêm quá nhiều.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5048" disabled="">
+    <label class="form-check-labelx" for="answers-5048">
+    EBS volume size cannot be changed. Build purging logic for your old log files
+    <br>
+    <i>EBS volume size có thể được thay đổi. Do đó đây không phải đáp án chính xác.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5049" disabled="">
+    <label class="form-check-labelx" for="answers-5049">
+    You can have only one EBS volume per instance. Snapshot existing EBS volume, detach current volume, create a new volume from snapshot with bigger size and attached to EC2 instance.
+    <br>
+    <i>Chúng ta có thể attach nhiều EBS volumes tới 1 EC2 instance.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022undefined\u0022:{\u0022correct\u0022:1,\u0022incorrect\u0022:0,\u0022category_id\u0022:null}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>

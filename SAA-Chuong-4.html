@@ -1,0 +1,776 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="mH9w6o3Yu7i1WPkroHw0PotlV8IabKINVYC5ei08"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+    Nộp thành công
+    </div>
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-06-05 14:35:52" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA Chương 4" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lần đầu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="15.9" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Trượt" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="4/10" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3092">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3092" aria-expanded="true" aria-controls="collapse-3092">
+    1. A company is planning to migrate an on-premise 15 TB MySQL database cluster onto AWS. The replication lag needs to be less than 100 ms for the cluster, and the size is expected to double in the next couple of months. Which of the following would be the ideal data store that should be chosen in AWS?
+    </div>
+    </div>
+    <div id="collapse-3092" class="accordion-collapse collapse show" aria-labelledby="heading-3092" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5130" disabled="">
+    <label class="form-check-labelx" for="answers-5130">
+    a. AWS RDS MySQL
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5131" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5131">
+    <b>b. AWS Aurora</b>
+    <br>
+    <i>Vì tất cả Aurora Replicas trả về kết quả truy vấn với độ trễ tối thiểu—thường nhỏ hơn 100 mili giây sau khi phiên bản chính cập nhật. Đối với yêu cầu mở rộng, đây cũng là lựa chọn tốt nhất. Dung lượng lưu trữ tối thiểu dành cho AWS Aurora là 10GB. Dựa trên mức sử dụng dung lượng lưu trữ Amazon Aurora sẽ tự động tăng lên tới 64 TB mà không ảnh hưởng đến hiệu suất CSDL. Không cần phải cung cấp lưu trữ trước, vậy nên Amazon Aurora là một CSDL MySQL tương thích đáp ứng được sự tăng trưởng lớn và nhanh về kích thước dữ liệu.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5132" disabled="">
+    <label class="form-check-labelx" for="answers-5132">
+    c. AWS DynamoDB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5133" disabled="">
+    <label class="form-check-labelx" for="answers-5133">
+    d. AWS Redshift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3093">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3093" aria-expanded="true" aria-controls="collapse-3093">
+    2. You are working as an AWS Architect for a multinational bank with hybrid cloud architecture. The bank is running a currency exchange website that uses a MySQL Server RDS instance as its database. As part of the company's business continuity plan, there is a need to keep a read replica of the production RDS instance to the bank's on-premise data center. In this scenario, what is the most secure and effective way to meet this requirement?
+    </div>
+    </div>
+    <div id="collapse-3093" class="accordion-collapse collapse show" aria-labelledby="heading-3093" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5134" disabled="">
+    <label class="form-check-labelx" for="answers-5134">
+    a. Change the MySQL Server RDS instance as the master node and then enable replication over the public Internet using a secure SSL endpoint to a server on the on-premise data center.
+    <br>
+    <i>Có thể. Nhưng bạn được hỏi về cách an toàn nhất</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5135" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5135">
+    b. Configure the MySQL Server RDS instance to replicate to an EC2 instance with core MySQL and then enable Replication over a secure VPN connection.
+    <br>
+    <i>Nó cũng không phải là một lựa chọn an toàn</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5136" disabled="">
+    <label class="form-check-labelx" for="answers-5136">
+    c. Use native backup and restore for MySQL Server databases using full backup files by storing it on Amazon S3, and then restore the backup file onto an on-premises server.
+    <br>
+    <i>Nó mô tả một giải pháp sao lưu-khôi phục</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5137" disabled="">
+    <label class="form-check-labelx" for="answers-5137">
+    <b>d. Create an IPsec VPN connection through the Virtual Private Cloud service and configure replication in MySQL Server.</b>
+    <br>
+    <i>Nó cung cấp kết nối trực tiếp an toàn nhất. <br>Những bản sao có thể được định cấu hình trong dịch vụ MySQL Server vì nó không thể được thực hiện từ dịch vụ RDS đến trung tâm dữ liệu On-Premise.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3094">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3094" aria-expanded="true" aria-controls="collapse-3094">
+    3. Your company has got a client whose data is stored in AWS for a 3-tier application. The relational database should be highly durable and support schema changes. Changes to the database should not result in downtime. As a Cloud Architect of the Company, Which of the following would be the best data storage option for the Client?
+    </div>
+    </div>
+    <div id="collapse-3094" class="accordion-collapse collapse show" aria-labelledby="heading-3094" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5138" disabled="">
+    <label class="form-check-labelx" for="answers-5138">
+    a. AWS S3
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5139" disabled="">
+    <label class="form-check-labelx" for="answers-5139">
+    b. AWS Redshift
+    <br>
+    <i>Những cái còn lại thì không</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5140" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5140">
+    c. AWS DynamoDB
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5141" disabled="">
+    <label class="form-check-labelx" for="answers-5141">
+    <b>d. AWS Aurora</b>
+    <br>
+    <i>Amazon Aurora là một cơ sở dữ liệu quan hệ và hỗ trợ làm việc với các thay đổi trong cấu trúc .</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3095">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3095" aria-expanded="true" aria-controls="collapse-3095">
+    4. An online eCommerce WordPress Website is currently storing its records in a Single MySQL RDS database in AWS. After few days, there are severe performance issues on the database. They tried to Scale up the DB Instance. Right now, they are using SQS to pull up the queries in Queue. Which of the following can be added to the architecture to rectify the performance issue and the solution must be cost-effective?
+    </div>
+    </div>
+    <div id="collapse-3095" class="accordion-collapse collapse show" aria-labelledby="heading-3095" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5142" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5142">
+    a. Enable Multi-AZ for the database.
+    <br>
+    <i>Multi-AZ được sử dụng cho mục đích tăng cường độ sẵn sàng và độ bền chứ không phải cho các vấn đề về hiệu suất.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5143" disabled="">
+    <label class="form-check-labelx" for="answers-5143">
+    <b>b. Use Elasticache Service</b>
+    <br>
+    <i>dịch vụ Elasticache có thể được sử dụng để lưu vào bộ đệm tất cả các truy vấn phổ biến. Do đó, nếu các truy vấn giống nhau gây ra sự cố, các tập dữ liệu sẽ được tìm nạp từ Elasticache, thay vì cơ sở dữ liệu. Điều này sẽ giảm tải trên máy chủ cơ sở dữ liệu.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5144" disabled="">
+    <label class="form-check-labelx" for="answers-5144">
+    c. Place a Load Balance in front of database.
+    <br>
+    <i>Không thể sử dụng Cân bằng tải trên một máy chủ cơ sở dữ liệu.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5145" disabled="">
+    <label class="form-check-labelx" for="answers-5145">
+    d. Use Cloudfront in front of the database.
+    <br>
+    <i>Cloudfront lưu dữ liệu vào bộ nhớ đệm, có nghĩa là request yêu cầu thậm chí không được gửi đến máy chủ gốc.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3096">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3096" aria-expanded="true" aria-controls="collapse-3096">
+    5. A company is planning to migrate its existing on-premise application to the AWS Cloud. The application currently runs on .Net and uses Microsoft SQL Server as the backend database. Your Company has some limitations as they don’t have the developers currently to make recent changes to the code. Also, they don’t have the Infrastructure team currently to manage the infrastructure on AWS. Which of the following data service would your Company choose on AWS for the best use?
+    </div>
+    </div>
+    <div id="collapse-3096" class="accordion-collapse collapse show" aria-labelledby="heading-3096" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5146" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5146">
+    <b>a. AWS RDS</b>
+    <br>
+    <i>Có thể sử dụng dịch vụ AWS RDS và chọn nền tảng Microsoft SQL Server. Vì công ty không có sẵn các nhà phát triển để thực hiện các thay đổi code lớn, họ có thể di chuyển dữ liệu và thay đổi địa chỉ kết nối trong code. <br>Ngoài ra, trường hợp không có team để xử lý, quản trị hạ tầng, dịch vụ AWS RDS cung cấp hạ tầng và tự động hóa các tác vụ quản trị</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5147" disabled="">
+    <label class="form-check-labelx" for="answers-5147">
+    b. AWS DynamoDB
+    <br>
+    <i>không thể thực hiện quản lý code và Cơ sở hạ tầng.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5148" disabled="">
+    <label class="form-check-labelx" for="answers-5148">
+    c. AWS Aurora
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5149" disabled="">
+    <label class="form-check-labelx" for="answers-5149">
+    d. AWS Redshift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3097">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3097" aria-expanded="true" aria-controls="collapse-3097">
+    6. Your team had developed an online feedback application for the best image competition in AWS using CloudFormation. The application accepts high-quality images of each participant and stores them in S3. Then it records the information about the image as well as the participant’s profile in RDS. After the competition, the CloudFormation stack is not used anymore and to save resources. The stack should be terminated to save the cost. Your manager instructed you to back up the RDS database and the S3 bucket so the data can still be used even after the CloudFormation template is deleted. Which of the following options will fulfill this requirement?
+    </div>
+    </div>
+    <div id="collapse-3097" class="accordion-collapse collapse show" aria-labelledby="heading-3097" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5150" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5150">
+    a. Set the DeletionPolicy for the RDS instance to snapshot and then enable S3 bucket replication on the source bucket to a destination bucket to maintain a copy of all the S3 objects.
+    <br>
+    <i>Bản sao của S3 bucket là không cần thiết. Chúng ta có thể trực tiếp giữ lại nó.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5151" disabled="">
+    <label class="form-check-labelx" for="answers-5151">
+    b. Set the DeletionPolicy to retain on both the RDS and S3 resource types on the CloudFormation template.
+    <br>
+    <i>Chúng ta giữ lại ảnh chụp snapshot của RDS, không phải S3.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5152" disabled="">
+    <label class="form-check-labelx" for="answers-5152">
+    c. Set the DeletionPolicy on the S3 bucket to snapshot
+    <br>
+    <i>RDS cũng cần được sao lưu.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5153" disabled="">
+    <label class="form-check-labelx" for="answers-5153">
+    <b>d. Set the DeletionPolicy on the RDS resource to snapshot and set the S3 bucket to retain.</b>
+    <br>
+    <i>Tùy chọn Retain Giữ lại giữ tài nguyên trong trường hợp xóa stack.<br>Tùy chọn Snapshot tạo một ảnh chụp của tài nguyên trước khi tài nguyên đó bị xóa. <br>Tùy chọn Delete Xóa sẽ xóa tài nguyên cùng với stack.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3098">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3098" aria-expanded="true" aria-controls="collapse-3098">
+    7. A company wants to have a NoSQL database hosted on the AWS Cloud but do not have the proper staff to manage the underlying infrastructure. Which of the following would be the ideal choice in this scenario?
+    </div>
+    </div>
+    <div id="collapse-3098" class="accordion-collapse collapse show" aria-labelledby="heading-3098" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5154" disabled="">
+    <label class="form-check-labelx" for="answers-5154">
+    a. AWS Aurora
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5155" disabled="">
+    <label class="form-check-labelx" for="answers-5155">
+    b. AWS RDS
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5156" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5156">
+    <b>c. AWS DynamoDB</b>
+    <br>
+    <i>DynamoDB là một dịch vụ cơ sở dữ liệu không quan hệ nhanh và linh hoạt cho mọi quy mô. DynamoDB cho phép khách hàng giảm bớt gánh nặng quản trị của việc vận hành và mở rộng cơ sở dữ liệu phân tán sang AWS để họ không phải lo lắng về việc cung cấp phần cứng, thiết lập và cấu hình, lập kế hoạch dung lượng thông lượng, sao chép, vá lỗi phần mềm hoặc mở rộng quy mô cụm.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5157" disabled="">
+    <label class="form-check-labelx" for="answers-5157">
+    d. AWS Redshift
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3099">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3099" aria-expanded="true" aria-controls="collapse-3099">
+    8. You want to host a static website on AWS. As a Solutions architect, you have been given a task to establish a serverless architecture for the website. Which of the following could be included in the proposed architecture? (Select Two)
+    </div>
+    </div>
+    <div id="collapse-3099" class="accordion-collapse collapse show" aria-labelledby="heading-3099" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5158" disabled="">
+    <label class="form-check-labelx" for="answers-5158">
+    <b>a. Use DynamoDB to store data in tables</b>
+    <br>
+    <i>Cả Dịch vụ lưu trữ đơn giản Simple Storage Service và DynamoDB đều là những dịch vụ hoàn chỉnh không có máy chủ từ AWS mà bạn không cần phải bảo trì máy chủ, các ứng dụng của bạn sẽ có tính khả dụng và tự động cao.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5159" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5159">
+    b. Use EC2 to host data on EBS Volumes.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5160" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5160">
+    <b>c. Use the Simple Storage Service to store data</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5161" disabled="">
+    <label class="form-check-labelx" for="answers-5161">
+    d. Use AWS RDS to store data.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3100">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3100" aria-expanded="true" aria-controls="collapse-3100">
+    9. You are developing a new mobile application which is expected to be used by thousands of customers. You are considering to store user preferences in AWS, and need a data store to save the same. Each data item is expected to be 20KB in size. The solution needs to be cost-effective, highly available, scalable, and secure. How would you design the data layer?
+    </div>
+    </div>
+    <div id="collapse-3100" class="accordion-collapse collapse show" aria-labelledby="heading-3100" data-bs-parent="#accordionQuestion">
+     <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5162" disabled="">
+    <label class="form-check-labelx" for="answers-5162">
+    a. Create a new AWS MySQL RDS instance and store the user data there.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5163" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5163">
+    <b>b. Create a DynamoDB table with the required Read and Write capcaity and use it as the data layer</b>
+    <br>
+    <i>Trong trường hợp này, vì mỗi mục dữ liệu là 20KB và do DynamoDB là một lựa chọn lý tưởng để lưu trữ các tùy chọn của người dùng. Ngoài ra, DynamoDB là một dịch vụ khả dụng và có khả năng mở rộng cao</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5164" disabled="">
+    <label class="form-check-labelx" for="answers-5164">
+    c. Use Amazon Glacier to store the user data.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5165" disabled="">
+    <label class="form-check-labelx" for="answers-5165">
+    d. Use an Amazon Redshift Cluster for managing the user preferences.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3101">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3101" aria-expanded="true" aria-controls="collapse-3101">
+    10. A customer is planning to host an AWS RDS instance. He needs to ensure that the underlying data is encrypted. How can this be achieved? (SELECT 2)
+    </div>
+    </div>
+    <div id="collapse-3101" class="accordion-collapse collapse show" aria-labelledby="heading-3101" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5166" disabled="">
+    <label class="form-check-labelx" for="answers-5166">
+    <b>a. Ensure that the right instance class is chosen for the underlying DB instance (DB engine)</b>
+    <br>
+    <i>Mã hóa cho cơ sở dữ liệu phải được thực hiện trong quá trình tạo cơ sở dữ liệu. Ngoài ra, bạn cần chắc rằng kiểu instance bên dưới có hỗ trợ mã hóa DB.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5167" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5167">
+    b. Choose General Purpose SSD because only this volume type supports encryption of data.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5168" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5168">
+    <b>c. Encrypt the database during creation</b>
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5169" disabled="">
+    <label class="form-check-labelx" for="answers-5169">
+    d. Enable encryption of the underlying EBS Volume.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022undefined\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:1,\u0022category_id\u0022:null}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>

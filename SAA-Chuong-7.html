@@ -1,0 +1,795 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" type="text/javascript">
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" type="text/javascript"></script>
+    <script src="https://training.codestar.vn/js/flash-message-remove.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/common.css">
+    <link rel="stylesheet" href="https://training.codestar.vn/css/user.css">
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Codestar Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam">Đề thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/exam-result">Kết quả thi</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link " href="https://training.codestar.vn/user/practice">Luyện tập</a>
+    </li>
+    </ul>
+    <a href="https://training.codestar.vn/user/statistic" class="btn btn-outline-success" style="margin-right: 1rem">Thống kê</a>
+    <form class="d-flex" action="https://training.codestar.vn/account/logout" method="POST">
+    <input type="hidden" name="_token" value="Pof0Et7IplWJe2VyACBDzj8aDQW0QMezxlrFPQ5l"> <a href="https://training.codestar.vn/account/change-password" class="btn btn-outline-success" style="margin-right: 1rem">Đổi mật khẩu</a>
+    <button class="btn btn-outline-success ml-2" type="submit">Đăng xuất</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <div class="container white-box">
+    <div class="row mb-3">
+    <div class="col-sm-12">
+    <div class="tab-pane active" id="exam" role="tabpanel" aria-labelledby="exam-tab">
+    <div class="row">
+    <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2 ">
+    <div class="form-check">
+    <h4>Quản lý kết quả thi</h4>
+    </div>
+    </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+    Nộp thành công
+    </div>
+    <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="username" name="username" value="caoquochuy@gmail.com" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="take-exam-time" class="col-sm-2 col-form-label">Thời gian thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="take-exam-time" name="take-exam-time" value="2022-06-19 14:04:07" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-name" class="col-sm-2 col-form-label">Tên đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-name" name="exam-name" value="AWS-SAA Chương 7" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-type" class="col-sm-2 col-form-label">Loại đề thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-type" name="exam-type" value="Kết quả thi lần đầu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-time" class="col-sm-2 col-form-label">Thời gian làm bài (phút)</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-time" name="exam-time" value="18.783333333333" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="exam-result" class="col-sm-2 col-form-label">Kết quả thi</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="exam-result" name="exam-result" value="Đậu" placeholder="" readonly="">
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="correct-answer" class="col-sm-2 col-form-label">Đáp án chính xác</label>
+    <div class="col-sm-3">
+    <input type="text" class="form-control" id="correct-answer" name="correct-answer" value="6/10" placeholder="" readonly="">
+    </div>
+    </div>
+    </div>
+    <div class="my-5">
+    <h3 class="text-center">Kiến thức</h3>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <canvas id="exam-statistic-total" width="790" height="790" style="display: block; box-sizing: border-box; height: 632px; width: 632px;"></canvas>
+    </div>
+    <div class="col-10 offset-1">
+    <canvas id="exam-statistic-category-bar" width="1336" height="667" style="display: block; box-sizing: border-box; height: 533.6px; width: 1068.8px;"></canvas>
+    </div>
+    </div>
+    </div>
+    <div class="accordion" id="accordionQuestion">
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3163">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3163" aria-expanded="true" aria-controls="collapse-3163">
+    1. A company has a customer relationship management (CRM) application that stores data in an Amazon RDS DB instance that runs Microsoft SQL<br>Server. The company’s IT staff has administrative access to the database. The database contains sensitive data. The company wants to ensure<br>that the data is not accessible to the IT staff and that only authorized personnel can view the data.<br>What should a solutions architect do to secure the data?
+    </div>
+    </div>
+    <div id="collapse-3163" class="accordion-collapse collapse show" aria-labelledby="heading-3163" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5401" disabled="">
+    <label class="form-check-labelx" for="answers-5401">
+    Use client-side encryption with an Amazon RDS managed key.
+    <br>
+    <i>Sai. Để người có thẩm quyền xem được data, chúng ta không thể sử dụng client side encryption</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5402" disabled="">
+    <label class="form-check-labelx" for="answers-5402">
+    Use client-side encryption with an AWS Key Management Service (AWS KMS) customer managed key.
+    <br>
+    <i>Sai. Để người có thẩm quyền xem được data, chúng ta không thể sử dụng client side encryption</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5403" disabled="">
+    <label class="form-check-labelx" for="answers-5403">
+    Use Amazon RDS encryption with an AWS Key Management Service (AWS KMS) default encryption key.
+    <br>
+    <i>Sai. Để IT Staff không thể truy cập được, chúng ta không thể sử dụng default encryption key</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5404" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5404">
+    <b>Use Amazon RDS encryption with an AWS Key Management Service (AWS KMS) customer managed key.</b>
+    <br>
+    <i>Đúng. Chúng ta có thể tạo CMK trên AWS KMS và sử dụng Key này để tạo RDS. IT staff vẫn có thể quản lý database, tuy nhiên để làm các thao tác liên quan tới data, thì cần phải có quyền truy cập vào KMS chứa key.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3164">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3164" aria-expanded="true" aria-controls="collapse-3164">
+    2. A company has an application workflow that uses an AWS Lambda function to download and decrypt files from Amazon S3. These files are<br>encrypted using AWS<br>Key Management Service Customer Master Keys (AWS KMS CMKs). A solutions architect needs to design a solution that will ensure the required<br>permissions are set correctly.<br>Which combination of actions accomplish this? (Choose two.)
+    </div>
+    </div>
+    <div id="collapse-3164" class="accordion-collapse collapse show" aria-labelledby="heading-3164" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5405" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5405">
+    Attach the kms:decrypt permission to the Lambda function’s resource policy.
+    <br>
+    <i>Sai. Chúng ta không cần decrypt Lambda ở đây</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5406" disabled="">
+    <label class="form-check-labelx" for="answers-5406">
+    <b>Grant the decrypt permission for the Lambda IAM role in the KMS key’s policy.</b>
+    <br>
+    <i>Đúng. Để sử dụng key, chúng ta phải cấp quyền decrypt cho Lambda IAM role</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5407" disabled="">
+    <label class="form-check-labelx" for="answers-5407">
+    Grant the decrypt permission for the Lambda resource policy in the KMS key’s policy
+    <br>
+    <i>Sai. Chúng ta cần gắn permission vào Role, chứ không phải resource policy</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5408" disabled="">
+    <label class="form-check-labelx" for="answers-5408">
+    Create a new IAM policy with the kms:decrypt permission and attach the policy to the Lambda function
+    <br>
+    <i>Sai. Chúng ta không sử dụng Policy để gắn trực tiếp vào Lambda function. Cần phải có Role</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="answers-5409" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5409">
+    <b>Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function.</b>
+    <br>
+    <i>Đúng. Sử dụng Role mới có gắn quyền decrypt và gắn nó vào execution role trên Lambda</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3165">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3165" aria-expanded="true" aria-controls="collapse-3165">
+    3. A company is preparing to store confidential data in Amazon S3. For compliance reasons, the data must be encrypted at rest. Encryption key<br>usage must be logged for auditing purposes. Keys must be rotated every year.<br>Which solution meets these requirements and is the MOST operationally efficient?
+    </div>
+    </div>
+    <div id="collapse-3165" class="accordion-collapse collapse show" aria-labelledby="heading-3165" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5410" disabled="">
+    <label class="form-check-labelx" for="answers-5410">
+    Server-side encryption with customer-provided keys (SSE-C)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5411" disabled="">
+    <label class="form-check-labelx" for="answers-5411">
+    Server-side encryption with Amazon S3 managed keys (SSE-S3)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5412" disabled="">
+    <label class="form-check-labelx" for="answers-5412">
+    Server-side encryption with AWS KMS (SSE-KMS) customer master keys (CMKs) with manual rotation
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5413" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5413">
+    <b>Server-side encryption with AWS KMS (SSE-KMS) customer master keys (CMKs) with automatic rotation</b>
+    <br>
+    <i>Trong câu hỏi này, yêu cầu cần log lại việc sử dụng encryption key. Để làm được việc này, chúng ta cần sử dụng KMS. Việc thực hiện rotate mỗi năm có thể thực hiện tự động trên KMS.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3166">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3166" aria-expanded="true" aria-controls="collapse-3166">
+    4. A company wants to automate the security assessment of its Amazon EC2 instances. The company needs to validate and demonstrate that<br>security and compliance standards are being followed throughout the development process.<br>What should a solutions architect do to meet these requirements?
+    </div>
+    </div>
+    <div id="collapse-3166" class="accordion-collapse collapse show" aria-labelledby="heading-3166" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5414" disabled="">
+    <label class="form-check-labelx" for="answers-5414">
+    Use Amazon Macie to automatically discover, classify and protect the EC2 instances.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5415" disabled="">
+    <label class="form-check-labelx" for="answers-5415">
+    Use Amazon GuardDuty to publish Amazon Simple Notification Service (Amazon SNS) notifications.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5416" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5416">
+    <b>Use Amazon Inspector with Amazon CloudWatch to publish Amazon Simple Notification Service (Amazon SNS) notifications</b>
+    <br>
+    <i>Inspector là dịch vụ giúp chúng ta assess các EC2 instances có theo các tiêu chuẩn development không. Do đó nó phù hợp để lựa chọn trong Use case này.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5417" disabled="">
+    <label class="form-check-labelx" for="answers-5417">
+    Use Amazon EventBridge (Amazon CloudWatch Events) to detect and react to changes in the status of AWS Trusted Advisor checks.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3167">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3167" aria-expanded="true" aria-controls="collapse-3167">
+    5. A company is preparing to launch a public-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within a<br>VPC behind an<br>Elastic Load Balancer (ELB). A third party service is used for the DNS. The company’s solutions architect must recommend a solution to detect<br>and protect against largescale DDoS attacks.<br>Which solution meets these requirements?
+    </div>
+    </div>
+    <div id="collapse-3167" class="accordion-collapse collapse show" aria-labelledby="heading-3167" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5418" disabled="">
+    <label class="form-check-labelx" for="answers-5418">
+    Enable Amazon GuardDuty on the account.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5419" disabled="">
+    <label class="form-check-labelx" for="answers-5419">
+    Enable Amazon Inspector on the EC2 instances.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5420" disabled="">
+    
+    <label class="form-check-labelx" for="answers-5420">
+    Enable AWS Shield and assign Amazon Route 53 to it.
+    <br>
+    <i></i>
+    
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5421" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5421">
+    <b>Enable AWS Shield Advanced and assign the ELB to it.</b>
+    <br>
+    <i>Để hạn chế DDOS ở mức large scale, chúng ta cần sử dụng AWS Shield Advanced</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3168">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3168" aria-expanded="true" aria-controls="collapse-3168">
+    6. An administrator of a large company wants to monitor for and prevent any cryptocurrency-related attacks on the company’s AWS accounts.<br>Which AWS service can the administrator use to protect the company against attacks?
+    </div>
+    </div>
+    <div id="collapse-3168" class="accordion-collapse collapse show" aria-labelledby="heading-3168" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5422" disabled="">
+    <label class="form-check-labelx" for="answers-5422">
+    Amazon Cognito
+    <br>
+    <i>Không liên quan</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5423" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5423">
+    <b>Amazon GuardDuty</b>
+    <br>
+    <i>GuardDuty là dịch vụ detect luồng traffic ra vào hệ thống Cloud của chúng ta. Do vậy nó đặc biệt hữu dụng trong trường hợp cần dùng để ngăn chặn cryptocurrency-related attacks</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5424" disabled="">
+    <label class="form-check-labelx" for="answers-5424">
+    Amazon Inspector
+    <br>
+    <i>Inspector chỉ đưa ra các tiêu chuẩn và yêu cầu các resource cần theo</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5425" disabled="">
+    <label class="form-check-labelx" for="answers-5425">
+    Amazon Macie
+    <br>
+    <i>Ngăn chặn việc lộ thông tin trên S3.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3169">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3169" aria-expanded="true" aria-controls="collapse-3169">
+    7. A company is designing an internet-facing web application. The application runs on Amazon EC2 for Linux-based instances that store sensitive<br>user data in<br>Amazon RDS MySQL Multi-AZ DB instances. The EC2 instances are in public subnets, and the RDS DB instances are in private subnets. The<br>security team has mandated that the DB instances be secured against web-based attacks.<br>What should a solutions architect recommend?
+    </div>
+    </div>
+    <div id="collapse-3169" class="accordion-collapse collapse show" aria-labelledby="heading-3169" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5426" disabled="">
+    <label class="form-check-labelx" for="answers-5426">
+    Ensure the EC2 instances are part of an Auto Scaling group and are behind an Application Load Balancer. Configure the EC2 instance
+    iptables rules to drop suspicious web traffic. Create a security group for the DB instances. Configure the RDS security group to only allow port
+    3306 inbound from the individual EC2 instances
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5427" disabled="">
+    <label class="form-check-labelx" for="answers-5427">
+    Ensure the EC2 instances are part of an Auto Scaling group and are behind an Application Load Balancer. Move DB instances to the same
+    subnets that EC2 instances are located in. Create a security group for the DB instances. Configure the RDS security group to only allow port
+    3306 inbound from the individual EC2 instances.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5428" disabled="">
+    <label class="form-check-labelx" for="answers-5428">
+    <b>Ensure the EC2 instances are part of an Auto Scaling group and are behind an Application Load Balancer. Use AWS WAF to monitor inbound web traffic for threats. Create a security group for the web application servers and a security group for the DB instances. Configure the RDS security group to only allow port 3306 inbound from the web application server security group.</b>
+    <br>
+    <i>Xét về security, thì cần ưu tiên bật WAF. Về RDS instance, không cần tạo 1 DB mới. Đồng thời để đảm bảo an toàn, có thể config RDS Sài Gòn chỉ cho phép từ SG truy cập từ Web application</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5429" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5429">
+    Ensure the EC2 instances are part of an Auto Scaling group and are behind an Application Load Balancer. Use AWS WAF to monitor inbound web traffic for threats. Configure the Auto Scaling group to automatically create new DB instances under heavy traffic. Create a security group for the RDS DB instances. Configure the RDS security group to only allow port 3306 inbound.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3170">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3170" aria-expanded="true" aria-controls="collapse-3170">
+    8. A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certificate, which is on each<br>instance to perform<br>SSL termination.<br>There has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute<br>capacity of the web servers to reach their maximum limit.<br>What should a solutions architect do to increase the application’s performance?
+    </div>
+    </div>
+    <div id="collapse-3170" class="accordion-collapse collapse show" aria-labelledby="heading-3170" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5430" disabled="">
+    <label class="form-check-labelx" for="answers-5430">
+    Create a new SSL certificate using AWS Certificate Manager (ACM). Install the ACM certificate on each instance.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5431" disabled="">
+    <label class="form-check-labelx" for="answers-5431">
+    Create an Amazon S3 bucket. Migrate the SSL certificate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL
+    Termination.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5432" disabled="">
+    <label class="form-check-labelx" for="answers-5432">
+    Create another EC2 instance as a proxy server. Migrate the SSL certificate to the new instance and configure it to direct connections to the
+    existing EC2 instances.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5433" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5433">
+    <b>Import the SSL certificate into AWS Certificate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the
+    SSL certificate from ACM</b>
+     <br>
+    <i>Import SSL into ACM and use SSL from ACM in ALB is the best way to solve this case.</i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3171">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3171" aria-expanded="true" aria-controls="collapse-3171">
+    9. A company is preparing to deploy a data lake on AWS. A solutions architect must define the encryption strategy tor data at rest m Amazon S3/ The<br>company‫ג‬€TMs security policy states:<br>- Keys must be rotated every 90 days.<br>- Strict separation of duties between key users and key administrators must be implemented.<br>- Auditing key usage must be possible.<br>What should the solutions architect recommend?
+    </div>
+    </div>
+    <div id="collapse-3171" class="accordion-collapse collapse show" aria-labelledby="heading-3171" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5434" disabled="">
+    <label class="form-check-labelx" for="answers-5434">
+    <b>Server-side encryption with AWS KMS managed keys (SSE-KMS) with customer managed customer master keys (CMKs)</b>
+    <br>
+    <i>Để có thể separate duties và Auditing key usagem chúng ta cần sử dụng KMS. Sử dụng AWS managed CMK, chúng ta chỉ có lựa chọn duy nhất là rotate key “Once every three years automatically”. Do đó, chúng ta lựa chọn phương án đầu tiên, để có thể rotate bất cứ lúc nào.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5435" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5435">
+    Server-side encryption with AWS KMS managed keys (SSE-KMS) with AWS managed customer master keys (CMKs)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5436" disabled="">
+    <label class="form-check-labelx" for="answers-5436">
+    Server-side encryption with Amazon S3 managed keys (SSE-S3) with customer managed customer master keys (CMKs)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5437" disabled="">
+    <label class="form-check-labelx" for="answers-5437">
+    Server-side encryption with Amazon S3 managed keys (SSE-S3) with AWS managed customer master keys (CMKs)
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <div class="accordion-header " id="heading-3172">
+    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3172" aria-expanded="true" aria-controls="collapse-3172">
+    10. A company operates an ecommerce website on Amazon EC2 instances behind an Application Load Balancer (ALB) in an Auto Scaling group. The<br>site is experiencing performance issues related to a high request rate from illegitimate external systems with changing IP addresses. The security<br>team is worried about potential DDoS attacks against the website. The company must block the illegitimate incoming requests in a way that has a<br>minimal impact on legitimate users.<br>What should a solutions architect recommend?
+    </div>
+    </div>
+    <div id="collapse-3172" class="accordion-collapse collapse show" aria-labelledby="heading-3172" data-bs-parent="#accordionQuestion">
+    <div class="tags accordion-body">
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5438" disabled="">
+    <label class="form-check-labelx" for="answers-5438">
+    Deploy Amazon Inspector and associate it with the ALB.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5439" disabled="">
+    <label class="form-check-labelx" for="answers-5439">
+    <b>Deploy AWS WAF, associate it with the ALB, and configure a rate-limiting rule.</b>
+    <br>
+    <i>Dịch vụ tốt nhất để phòng tránh DDOS là AWS Shield. Tuy nhiên ở đây, WAF với config rate-limiting rule cũng có thể ngăn chặn được 1 vài cuộc tấn công ở mức độ thấp.</i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5440" disabled="">
+    <label class="form-check-labelx" for="answers-5440">
+    Deploy rules to the network ACLs associated with the ALB to block the incoming traffic.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    <div class="accordion-body">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="answers-5441" disabled="" checked="">
+    <label class="form-check-labelx" for="answers-5441">
+    Deploy Amazon GuardDuty and enable rate-limiting protection when configuring GuardDuty.
+    <br>
+    <i></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+                const categoryResult = JSON.parse('{\u0022undefined\u0022:{\u0022correct\u0022:0,\u0022incorrect\u0022:1,\u0022category_id\u0022:null}}');
+    
+                const CHART_COLORS = [
+                     'rgb(255, 99, 132)',
+                     'rgb(54, 162, 235)',
+                     'rgb(255, 159, 64)',
+                     'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                     'rgb(153, 102, 255)',
+                     'rgb(201, 203, 207)',
+                    '#9c1de7',
+                    '#17b978',
+                    '#cb3b3b',
+                    '#713045',
+                    '#a56cc1',
+                    '#6c5fa7',
+                    '#bf5caa'
+                ];
+    
+                let labels = [];
+                let correct = [];
+                let incorrect = [];
+                let total = [0,0];
+    
+                let categoryData = [];
+                let categoryColor = [];
+    
+    
+    
+                let i =0;
+                for (const [key, value] of Object.entries(categoryResult)) {
+                    labels.push(key);
+    
+                    // data for exam total result
+                    total[0] +=  value.correct;
+                    total[1] +=  value.incorrect;
+    
+                    // data for exam category result
+                    categoryData.push(value.correct + value.incorrect);
+                    categoryColor.push(CHART_COLORS[i++ % CHART_COLORS.length]);
+    
+                    // data for category bar chart
+                    let correctPercent = Math.round(value.correct / (value.correct + value.incorrect) * 100)
+                    correct.push(correctPercent);
+                    incorrect.push(100 - correctPercent);
+    
+                }
+    
+    
+                // total exam chart
+    
+                const dataTotal = {
+                    labels: ['Đúng', 'Sai'],
+                    datasets: [
+                        {
+                            data:total,
+                            backgroundColor: [CHART_COLORS[1],CHART_COLORS[0]],
+                        }
+                    ]
+                };
+    
+                const configTotal = {
+                    type: 'doughnut',
+                    data: dataTotal,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ Đúng/Sai'
+                            },
+                        }
+                    },
+                };
+    
+                const chartTotal = new Chart(
+                    document.getElementById('exam-statistic-total'),
+                    configTotal
+                );
+    
+                // end total exam chart
+    
+    
+                // category bar chart
+    
+                const dataCateBar = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Đúng',
+                            data: correct,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[1],
+                        },
+                        {
+                            label: 'Sai',
+                            data: incorrect,
+                            maxBarThickness: 28,
+                            backgroundColor: CHART_COLORS[0],
+                        },
+                    ]
+                };
+    
+                const configBarChar = {
+                    type: 'bar',
+                    data: dataCateBar,
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Tỷ lệ đúng/sai từng category'
+                            },
+                        },
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        }
+                    }
+                };
+    
+                const chartCateBar = new Chart(
+                    document.getElementById('exam-statistic-category-bar'),
+                    configBarChar
+                );
+    
+                //end bar chart
+    
+            </script>
+    
+    
+    </body></html>
